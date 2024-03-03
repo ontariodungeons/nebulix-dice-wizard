@@ -227,6 +227,66 @@ const project = defineCollection({
 	})
 })
 
+const games = defineCollection({
+	type: 'content',
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		intro: z.string().optional(),
+		thumbnail: z.string(),
+		og_image: z.string().optional(),
+		tag: z.array(z.string()).optional(),
+		features: z
+			.array(
+				z.object({
+					name: z.string(),
+					value: z.string()
+				})
+			)
+			.optional(),
+		hero_buttons: z
+			.array(
+				z.object({
+					href: z.string(),
+					className: z.string().optional(),
+					label: z.string(),
+					color: z.string().optional(),
+					icon: z.string().transform((val) => getIconName(val)).optional(),
+					icon_only: z.boolean().optional()
+				})
+			)
+			.optional(),
+		date: z
+			.string()
+			.or(z.date())
+			.transform((val) => new Date(val)),
+
+		style: style,
+		blocks: blocks,
+		nav: z
+			.object({
+				next: z
+					.array(
+						z.object({
+							href: z.string(),
+							label: z.string()
+						})
+					)
+					.optional(),
+
+				prev: z
+					.array(
+						z.object({
+							href: z.string(),
+							label: z.string()
+						})
+					)
+					.optional()
+			})
+			.optional()
+	})
+})
+
 const product = defineCollection({
 	type: 'content',
 	schema: z.object({
