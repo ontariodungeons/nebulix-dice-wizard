@@ -8,70 +8,46 @@ import tailwind from "@astrojs/tailwind";
 import rehypeExternalLinks from "rehype-external-links";
 import fauxRemarkEmbedder from "@remark-embedder/core";
 import fauxOembedTransformer from "@remark-embedder/transformer-oembed";
-
 const remarkEmbedder = fauxRemarkEmbedder.default;
 const oembedTransformer = fauxOembedTransformer.default;
-
 import vue from "@astrojs/vue";
 /** @type {import('astro-m2dx').Options} */
-
 const m2dxOptions = {
   exportComponents: true,
   unwrapImages: true,
-  autoImports: true,
+  autoImports: true
 };
+
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://nebulix.unfolding.io",
-  integrations: [
-    icon(),
-    mdx({}),
-    sitemap(),
-    tailwind(),
-    vue({
-      appEntrypoint: "/src/pages/_app",
-    }),
-    astroImageTools,
-  ],
+  site: "https://ontariodungeons.com",
+  integrations: [icon(), mdx({}), sitemap(), tailwind(), vue({
+    appEntrypoint: "/src/pages/_app"
+  }), astroImageTools],
   markdown: {
     extendDefaultPlugins: true,
-    remarkPlugins: [
-      [
-        remarkEmbedder,
-        {
-          transformers: [oembedTransformer],
-        },
-      ],
-      [m2dx, m2dxOptions],
-    ],
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          rel: ["nofollow"],
-          target: ["_blank"],
-        },
-      ],
-    ],
+    remarkPlugins: [[remarkEmbedder, {
+      transformers: [oembedTransformer]
+    }], [m2dx, m2dxOptions]],
+    rehypePlugins: [[rehypeExternalLinks, {
+      rel: ["nofollow"],
+      target: ["_blank"]
+    }]]
   },
   vite: {
     build: {
       rollupOptions: {
-        external: [
-          "/_pagefind/pagefind.js",
-          "/_pagefind/pagefind-ui.js",
-          "/_pagefind/pagefind-ui.css",
-        ],
+        external: ["/_pagefind/pagefind.js", "/_pagefind/pagefind-ui.js", "/_pagefind/pagefind-ui.css"]
       },
-      assetsInlineLimit: 10096,
-    },
+      assetsInlineLimit: 10096
+    }
   },
   build: {
-    inlineStylesheets: "always",
+    inlineStylesheets: "always"
   },
   scopedStyleStrategy: "attribute",
   prefetch: {
-    defaultStrategy: "viewport",
-  },
+    defaultStrategy: "viewport"
+  }
 });
