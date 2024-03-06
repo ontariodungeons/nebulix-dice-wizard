@@ -30,7 +30,7 @@ module.exports = {
     },
   },
   plugins: [
-    require("@tailwindcss/container-queries"),
+    require("@tailwindcss/typography", "@tailwindcss/container-queries", "require('daisyui')"),
     plugin(function ({ addBase }) {
       addBase({
         html: { fontSize: "16px" },

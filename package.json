@@ -57,9 +57,11 @@
   "devDependencies": {
     "@iconify-json/game-icons": "^1.1.7",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "@tailwindcss/typography": "^0.5.10",
     "astro-compress": "2.2.7",
     "astro-icon": "^1.1.0",
     "cross-env": "^7.0.3",
+    "daisyui": "^4.7.2",
     "dotenv": "^16.3.1",
     "pagefind": "^1.0.4",
     "postcss-import": "^16.0.0",

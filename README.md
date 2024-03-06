@@ -1,224 +1,62 @@
-# Nebulix | Astro + Static CMS
+```markdown:README.md
+# Dice Wizard Games
 
-[![License: CC BY-ND 4.0](https://img.shields.io/badge/License-CC_BY--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nd/4.0/)
+Welcome to the magical realm of Dice Wizard Games, where adventure awaits at every turn! Our mission is to bring unforgettable gaming experiences to life, hosting events and games that whisk you away to fantastical worlds. Whether you're a seasoned adventurer or new to the realm of role-playing games, Dice Wizard is your guide to epic quests and thrilling stories.
 
+![Dice Wizard](https://nebulix.unfolding.io/screenshots/nebulix-00-start.jpg)
 
+## 🌟 Join Our Quest
 
+Dice Wizard isn't just about the games we create; it's about the community we build. If you've ever dreamed of shaping the very adventures you embark on, we're inviting you to join us behind the scenes. Help us craft the next legendary campaign, design a fearsome dungeon, or even just spread the word about our quests. Your creativity and passion can help make Dice Wizard truly magical.
 
-A Universe of Possibilities: Blogs, Portfolios, Webshop, Restaurant Menus, and Beyond.
+## 🚀 Quick Start Guide
 
+Ready to dive in? Here's how you can join our quest or even help build the Dice Wizard realm:
 
+1. **Join the Adventure**: Sign up for our next game event [here](https://your-website.com/signup).
+2. **Lend Your Magic**: Interested in helping out? Find out how you can contribute [here](https://your-website.com/contribute).
 
-![Nebulix](https://nebulix.unfolding.io/screenshots/nebulix-00-start.jpg)
+## 🛠️ For Aspiring Wizards
 
-## Notice
+If you're keen on wielding the magic behind the scenes and contributing to our website, here's a simplified guide to get you started:
 
-__This theme is currently under development, and until we reach version 1.0.0, there is a possibility that upgrading could lead to errors.__
+### 📜 Setting Up Your Spellbook
 
-## 🛠️Deploy
-Easily deploy this theme to Netlify with a single click, and conveniently update environment variables afterward on Netlify.
+First, you'll need to prepare your spellbook (a.k.a. setting up your environment). Don't worry, it's easier than it sounds! Just follow these steps:
 
+1. **Gather Your Materials**: Make sure you have [Node.js](https://nodejs.org/) installed on your magical device.
+2. **Clone Our Repository**: Visit our [GitHub page](https://github.com/unfolding-io/nebulix) and clone the project.
+3. **Install Magical Components**: Run `npm install` in your terminal to gather all the necessary components.
 
+### 🌌 Casting Spells (Development)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/unfolding-io/nebulix#BLOG_SLUG=blog&PORTFOLIO_SLUG=work&SHOP_SLUG=shop&MENU_SLUG=menu&WEBSITE_LANGUAGE=en&CURRENCY=USD&UNITS=metric&NODE_VERSION=18)
+To start casting spells and see your magic in action:
 
+1. **Start Your Enchantment**: Run `npm run dev` to begin weaving your magic.
+2. **Visit Your Creation**: Open your browser and go to http://localhost:4321 to see the website come to life.
 
-## Constellations of Features:
+### 📦 Sharing Your Magic (Building)
 
--   📰 Chart Your Path with a Blog
--   🖼 Showcase Your Stellar Portfolio
--   🍝 Illuminate Culinary Voyages with a Restaurant Menu
--   🛒 Launch Your Webshop Powered by Snipcart
--   🔍 SEO Constellations: Canonical URLs and OpenGraph radiance
--   🧭 Navigational Maps: Sitemap Support
--   📑Language of the Stars: Markdown & MDX Support
--   📝 Static CMS Ready for Galactic Exploration
-- 	🐵 Mailchimp newsletter form
--   🕵 Unveil Hidden Constellations with Full Text Search using Pagefind
+Once you're ready to share your enchantments with the world:
 
-## ♻️ Page Speed and Emissions
-Experience the green and swift capabilities of Nebulix. With an impressively low emission of 0.05g - 0.07g CO2 per page visit and consistently achieving a lighthouse score between 98 and 100, Nebulix ensures both speed and environmental consciousness for your website.
+1. **Compile Your Spells**: Run `npm run build` to prepare your magic for the wider world.
+2. **Preview Your Work**: Use `npm run preview` to take one last look before unveiling your creation.
 
-## 🚀 Getting Started
+## 📚 Learning More
 
-### 1. Setting up the .env file
+Eager to learn more about the magic behind Dice Wizard? Check out these resources:
 
-rename the `env.txt` to `.env` and fill in your details
+- **Astro Magic**: Discover how to harness the power of Astro [here](https://docs.astro.build).
+- **Join Our Circle**: Connect with fellow wizards and adventurers in our [Discord server](https://astro.build/chat).
 
-```ENV
-BLOG_SLUG=blog
-PORTFOLIO_SLUG=work
-SHOP_SLUG=shop
-MENU_SLUG=menu
-WEBSITE_LANGUAGE=en
-CURRENCY=USD
-UNITS=metric
-SNIPCART_KEY=<your-snipcart-public-key>
-NODE_VERSION=18
-NEWSLETTER_PROVIDER=mailchimp
-MAILCHIMP_API_KEY=XXXXXXXXXXXXXXXX-us21
-MAILCHIMP_SERVER_PREFIX=us21	
-MAILCHIMP_LIST_ID=XXXXXXXXX
+## 🛡️ Support the Quest
 
-FROM_EMAIL_ADDRESS=[test@email.com](mailto:test@email.com)
-TO_EMAIL_ADDRESS=[test@email.com](mailto:test@email.com)
+Encountered a dragon or a bug on your journey? Fear not! Reach out to us [here](mailto:hello@unfolding.io), and we'll help you vanquish it.
 
-MAILGUN_API_KEY=XXXXXXXXX
-MAILGUN_DOMAIN=XXXXXXXXX
-MAILGUN_API_URL=<https://api.eu.mailgun.net>
+## 🌟 Become a Patron
 
-POSTMARK_SERVER_TOKEN=XXXXXXXXX
+Love what we're doing? Consider supporting Dice Wizard by [buying us a potion](https://www.buymeacoffee.com/unfolding.io) (or a coffee). Your support keeps our adventures alive!
 
-SLACK_CHANNEL_ID=XXXXXXXXX
-SLACK_TOKEN=XXXXXXXXX
+[![Support Us](https://starfunnel.unfolding.io/screenshots/bymeacoffee.webp)](https://www.buymeacoffee.com/unfolding.io)
 
-```
-
-### 2. Configure your Static CMS Backend
-
-Navigate to `src/pages/admin.astro` and provide your Git repository details. You can find a list of all supported Git backends at:
-<https://www.staticcms.org/docs/backends-overview>
-
-
-**_Gitlab Example:_**
-
-```javascript
-
-const config = {
-	locale: lang,
-	site_url: url,
-	logo_url: 'https://nebulix.unfolding.io/nebulix-logo.svg',
-	local_backend: true,
-	backend: {
-		name: 'gitlab',
-		repo: '/<your-gitlab-repo>',
-		auth_type: 'pkce', // Required for pkce
-		app_id: 'xxxx', // Application ID from your GitLab settings
-		commit_messages: {
-			create: 'Create {{collection}} "{{slug}}"',
-			update: 'Update {{collection}} "{{slug}}"',
-			delete: 'Delete {{collection}} "{{slug}}"',
-			uploadMedia: 'Upload "{{path}}"',
-			deleteMedia: 'Delete "{{path}}"'
-		}
-	},
-	search: 'true',
-    ....
-}
-
-```
-
-### 3. Add your site to the astro config
-
-```javascript
-
-export default defineConfig({
-	site: 'https://your-website.com',
-    ....
-
-```
-
-### 4. Install dependencies
-
-```bash
-$ npm install
-```
-
-### 🛠️ 5. Start Development server
-
-```bash
-$ npm run dev
-```
-
-If you wish to engage the local backend:
-
-```bash
-$ npm run cms-proxy-server
-```
-
-Now you can open Static CMS on http://localhost:4321/admin/
-
-
-## ❌ Removing Collections
-If your cosmic journey excludes a blog, portfolio, shop, or restaurant menu, simply remove the corresponding documents from the `src/content`. Additionally, erase the page templates from `src/pages` .
-
-
-## 🛸 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                    | Action                                           |
-| :------------------------- | :----------------------------------------------- |
-| `npm install`              | Installs dependencies                            |
-| `npm run dev`              | Starts local dev server at `localhost:4321`      |
-| `npm run cms-proxy-server` | Starts Static CMS proxy server for local-backend |
-| `npm run build`            | Build your production site to `./dist/`          |
-| `npm run preview`          | Preview your build locally, before deploying     |
-| `npm run astro ...`        | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`  | Get help using the Astro CLI                     |
-
-## 📁 Documentation
-Learn how to harness the power of Static CMS and craft a distinctive website that stands out from the crowd.
-
-[Documentation](https://nebulix.unfolding.io/blog/tag/docs)
-
-## 🌐 Demo
-
-Witness the extraordinary speed of Nebulix in action.
-
-[Demo](https://nebulix.unfolding.io)
-
-## 👀 Want to learn more about Astro?
-
-Check out [Astro documentation](https://docs.astro.build) or jump into Astro's [Discord server](https://astro.build/chat).
-
-## 📚 Tech Stack
-
-Astro, MDX, Vue, TailwindCSS, Pagefind, Snipcart
-
-## 🛟 Support
-
-If you encounter any issues or bugs, we encourage you to open an issue in the repository. To help us quickly address the problem, please provide detailed information about the bug and steps to reproduce it.
-
-## 👑 Premium Support
-
-For those seeking priority assistance, we offer premium support services. Do you need support, custom intergrations, design, or development? Feel free to reach out to me by email at [hello@unfolding.io.](mailto:hello@unfolding.io.) find me on [UpWork](https://www.upwork.com/freelancers/~01dcde6b3915c74c30) Im here to help!
-
-
-## 📝 License
-
-Want to get rid of the attribution? Simply [purchase a license](https://nebulix.unfolding.io/shop/nebulix-license/) and you're good to go.
-
-## 🚕 Roadmap
-
-As we journey towards v1.0, our path includes enriching the page builder with a diverse array of new blocks, upgrading dependencies to ensure optimal performance, and introducing exciting features. We're eager to hear from you! If you have any feature requests, please feel free to reach out and let us know.
-
-## ☕️ Want to Caffeinate your Developer?
-
-By [caffeinating](https://www.buymeacoffee.com/unfolding.io) your developer, you're not just getting the best out of them; you're also ensuring a cheerful and energetic work environment.😊
-
-[![buymeacoffee](https://starfunnel.unfolding.io/screenshots/bymeacoffee.webp)](https://www.buymeacoffee.com/unfolding.io)
-
-
-
-## 📸 Screenshots
-
-![Nebulix](https://nebulix.unfolding.io/screenshots/nebulix-01-shop.jpg)
-
-![Nebulix](https://nebulix.unfolding.io/screenshots/nebulix-02-shop-category.jpg)
-
-![Nebulix](https://nebulix.unfolding.io/screenshots/nebulix-03-shop-product.jpg)
-
-![Nebulix](https://nebulix.unfolding.io/screenshots/nebulix-04-shop-product.jpg)
-
-![Nebulix](https://nebulix.unfolding.io/screenshots/nebulix-05-shop-product-dark.jpg)
-
-![Nebulix](https://nebulix.unfolding.io/screenshots/nebulix-06-blogpost.jpg)
-
-![Nebulix](https://nebulix.unfolding.io/screenshots/nebulix-07-portfolio.jpg)
-
-![Nebulix](https://nebulix.unfolding.io/screenshots/nebulix-08-footer.jpg)
-
-
-
-
+Join us at Dice Wizard Games, where every roll is the start of a new adventure. Let's create worlds together!
