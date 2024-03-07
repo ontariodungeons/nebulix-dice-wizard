@@ -1,4 +1,3 @@
-```markdown:README.md
 # Dice Wizard Games
 
 Welcome to the magical realm of Dice Wizard Games, where adventure awaits at every turn! Our mission is to bring unforgettable gaming experiences to life, hosting events and games that whisk you away to fantastical worlds. Whether you're a seasoned adventurer or new to the realm of role-playing games, Dice Wizard is your guide to epic quests and thrilling stories.

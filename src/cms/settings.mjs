@@ -404,6 +404,7 @@ export const settings = {
               name: "provider",
               label: t("provider"),
               widget: "select",
+              //this is where you can add more providers
               options: ["slack", "mailgun", "postmark"],
               required: true,
             },
