@@ -31,16 +31,16 @@ blocks:
           ### Novice Grounds 
 
           Greet newcomers and veterans alike with open arms in our introductory games. Build confidence and sharpen your skills as you embark on unforgettable journeys.
-        icon: /src/icons/tailwind.svg
-        color: bg-[#38bdf8] text-white
-      - color: bg-[#fc0] text-black
-        icon: /src/icons/shop.svg
+        icon: game-icons:locked-chest
+        color: bg-[#38bdf8] text-white 
+      - color: black text-white
+        icon: game-icons:battle-gear
         content: >
           ### Epic Adventures
 
 
           Step into a fantastic realm of limitless possibility, where heroes rise and legends are born. Discover the variety of adventures we offer, suitable for players of all ages and experience levels.
-      - icon: /src/icons/blocks-group-solid.svg
+      - icon: game-icons:all-for-one
         content: >
           ### Youthful Odyssey
 
@@ -49,13 +49,13 @@ blocks:
         color: surface-secondary
         href: ""
       - content: >
-          ### Interactive Outings
+          ### Online Adventures
 
 
-          Join our global D&D adventures, played on the premier platform FoundryVTT, connecting roleplaying enthusiasts across continents. Our registration ensures players are grouped into age-appropriate clusters for a secure and enjoyable experience.
+          Is life too busy for in-person games? Join our global D&D adventures, played on FoundryVTT, the official online platform for both D&D and pathfinder2. Registration ensures players are grouped into age-appropriate adventuring parties for a safe and enjoyable experience.
         icon: /src/icons/book-search-24-regular.svg
         color: surface-accent
-      - icon: /src/icons/template.svg
+      - icon: game-icons:eye-shield
         content: >
           ### Mature Chronicles
 
@@ -64,7 +64,7 @@ blocks:
         color: surface-success
         href: ""
       - href: "#"
-        icon: /src/icons/git.svg
+        icon: game-icons:scroll-quill
         content: >
           ### Painting Workshops for Young Adventurers
 
@@ -72,16 +72,16 @@ blocks:
           Unleash Your Inner Hero: an overview of all the steps required to create a professional table top ready model. A 5-week course, aimed primarily at ages 12-17.
         color: surface-primary
       - href: "#"
-        icon: /src/icons/git.svg
+        icon: game-icons:evil-book
         content: >
           ### Learn to be a Dungeon Master
 
           Polish your talents and reach new heights in our specialized workshops. Craft breathtaking miniatures or don the mantle of the illustrious Game Master with our step-by-step programs.
         color: surface-primary
       - href: "#"
-        icon: /src/icons/git.svg
+        icon: game-icons:dice-twenty-faces-twenty
         content: >
-          ### Orphan Dice Scintillating Collections
+          ### Orphan Dice
 
 
           A weekly class where students take turns running parts of an adventure.
@@ -112,20 +112,25 @@ blocks:
 
   - type: text_image
     component: TextImage
-    container: lg
-    template: column
-    image_size: "50"
-    title: My Image
+    container: none
+    template: banner
+    image_size: ""
+    title: The Dice Wizard
     reverse: true
     animate: false
-    thumbnail: /src/assets/dice-wizard-background.png
-    aspect: ""
     content: >
       ## Who is the Dice Wizard
 
 
       Read testimonials and reviews from other happy players and learn how the Dice Wizard gained all his levels of experience
-    surface: bg-slate-200 text-dark dark:bg-slate-800 dark:text-white
+    thumbnail: /src/assets/dice-wizard-background.png
+    aspect: 0.5625
+    buttons:
+      - icon_only: false
+        label: Learn More
+        href: "#more"
+        color: surface-base
+        icon: /src/icons/thumb-up-outline.svg
  
 style:
   hero_template: image
