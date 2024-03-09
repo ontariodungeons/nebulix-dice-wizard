@@ -37,15 +37,6 @@ const pageTitle = `${title} | ${data.sitename}`;
 <title>{pageTitle}</title>
 <meta name="title" content={pageTitle} />
 <meta name="description" content={description} />
-{
-  searchImage && (
-    <meta
-      data-pagefind-meta="image[content]"
-      content={searchImage}
-      property="search:image"
-    />
-  )
-}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -53,13 +44,6 @@ const pageTitle = `${title} | ${data.sitename}`;
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 {socialImage && <meta property="og:image" content={socialImage} />}
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-{socialImage && <meta property="twitter:image" content={socialImage} />}
 
 <script is:inline>
   const setDarkMode = () => {

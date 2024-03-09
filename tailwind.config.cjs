@@ -23,10 +23,13 @@ module.exports = {
       screens: {
         xs: "500px",
       },
+      fontFamily: {
+        sans: ["Philosopher", "sans-serif"],
+      },
     },
   },
   plugins: [
-    require("@tailwindcss/typography", "@tailwindcss/container-queries", "require('daisyui')"),
+    require("@tailwindcss/container-queries", "require('daisyui')"),
     plugin(function ({ addBase }) {
       addBase({
         html: { fontSize: "16px" },
