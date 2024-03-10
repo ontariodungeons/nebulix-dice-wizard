@@ -32,7 +32,7 @@ First, you'll need to prepare your spellbook (a.k.a. setting up your environment
 To start casting spells and see your magic in action:
 
 1. **Start Your Enchantment**: Run `npm run dev` to begin weaving your magic.
-2. **Visit Your Creation**: Open your browser and go to http://localhost:4321 to see the website come to life.
+2. **Visit Your Creation**: Open your browser and [go to](http://localhost:4321) to see the website come to life.
 
 ### 📦 Sharing Your Magic (Building)
 
