@@ -1,25 +1,6 @@
-@import url('./solbera-dnd-fonts/fantasy-fonts.css');
-@import url('./fonts/5e/5e-fonts.css');
-
 @tailwind base;
 
-
 @layer base {
-
-  body{
-    font-family: "Bookinsanity";
-  }
-
-	h1,h2,h3,h4 {
-		font-family : 'MrEavesRemake';
-	}
-
-  h5 {
-		font-family : 'ScalySansSmallCapsRemake';
-		font-size   : 0.423cm;
-		line-height : 0.951em;
-  }
-
   :root {
     --color-primary: 75 38 143; /* 135 94 212 */
     --color-secondary: 107 154 199;
@@ -150,11 +131,22 @@ body {
   }
 }
 
+@font-face {
+  font-family: "Adjusted Arial Fallback";
+  src: local(Arial);
+  size-adjust: 105%;
+  ascent-override: normal;
+  descent-override: normal;
+  line-gap-override: normal;
+}
+
 /* BASE ELEMENTS */
 body {
   @screen xs {
     --spacing: 2rem;
   }
+  font-family: "Inter Tight Variable", "Adjusted Arial Fallback", "arial",
+    sans-serif;
   --container-spacing: calc(var(--spacing) * 2);
   --grid-spacing: calc(var(--spacing) / 2);
 }
