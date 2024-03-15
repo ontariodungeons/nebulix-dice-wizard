@@ -1,3 +1,5 @@
+import { capitalize } from 'vue';
+
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
 module.exports = {
@@ -24,7 +26,8 @@ module.exports = {
         xs: "500px",
       },
       fontFamily: {
-        sans: ["Philosopher", "sans-serif"],
+        sans: ["ScalySansRemake", "sans-serif"],
+        serif: ["BookInsanityRemake", "serif"]
       },
     },
   },
