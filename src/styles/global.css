@@ -1,148 +1,53 @@
+@import url('./solbera-dnd-fonts/fantasy-fonts.css');
+@import url('./fonts/5e/5e-fonts.css');
+
 @tailwind base;
+
 
 @layer base {
 
-  @font-face {
-		font-family: BookInsanityRemake;
-		src: url('./Bookinsanity.woff2') format('woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: BookInsanityRemake;
-		src: url('./fonts/5e/Bookinsanity Bold.woff2') format('woff2');
-		font-weight: bold;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: BookInsanityRemake;
-		src: url('./fonts/5e/Bookinsanity Italic.woff2') format('woff2');
-		font-weight: normal;
-		font-style: italic;
-	}
-	@font-face {
-		font-family: BookInsanityRemake;
-		src: url('./fonts/5e/Bookinsanity Bold Italic.woff2') format('woff2');
-		font-weight: bold;
-		font-style: italic;
+  body{
+    font-family: "Bookinsanity";
+  }
+
+	h1,h2,h3,h4 {
+		font-family : 'MrEavesRemake';
 	}
 
-	/* Notes and Tables, sans-serif */
-	@font-face {
-		font-family: ScalySansRemake;
-		src: url('./fonts/5e/Scaly Sans.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: ScalySansRemake;
-		src: url('./fonts/5e/Scaly Sans Bold.woff2') format('woff2');
-		font-weight: bold;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: ScalySansRemake;
-		src: url('./fonts/5e/Scaly Sans Italic.woff2') format('woff2');
-		font-weight: normal;
-		font-style: italic;
-	}
-	@font-face {
-		font-family: ScalySansRemake;
-		src: url('./fonts/5e/Scaly Sans Bold Italic.woff2') format('woff2');
-		font-weight: bold;
-		font-style: italic;
-	}
-	@font-face {
-		font-family: ScalySansSmallCapsRemake;
-		src: url('./fonts/5e/Scaly Sans Caps.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: WalterTurncoat;
-		src: url('./fonts/5e/WalterTurncoat-Regular.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-	}
+  h5 {
+		font-family : 'ScalySansSmallCapsRemake';
+		font-size   : 0.423cm;
+		line-height : 0.951em;
+  }
 
-	/* Headers */
-	@font-face {
-		font-family: MrEavesRemake;
-		src: url('./fonts/5e/Mr Eaves Small Caps.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-	}
-
-	/* Fancy Drop Cap */
-	@font-face {
-		font-family: SolberaImitationRemake;
-		src: url('./fonts/5e/Solbera Imitation Tweak.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-	}
-
-	/* Cover Page */
-	@font-face {
-		font-family: NodestoCapsCondensed;
-		src: url('./fonts/5e/Nodesto Caps Condensed.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-	}
-
-	@font-face {
-		font-family: NodestoCapsCondensed;
-		src: url('./fonts/5e/Nodesto Caps Condensed Bold.woff2') format('woff2');
-		font-weight: bold;
-		font-style: normal;
-	}
-
-	@font-face {
-		font-family: NodestoCapsCondensed;
-		src: url('./fonts/5e/Nodesto Caps Condensed Italic.woff2') format('woff2');
-		font-weight: normal;
-		font-style: italic;
-	}
-
-	@font-face {
-		font-family: NodestoCapsCondensed;
-		src: url('./fonts/5e/Nodesto Caps Condensed Bold Italic.woff2') format('woff2');
-		font-weight: bold;
-		font-style: italic;
-	}
-
-	@font-face {
-		font-family: NodestoCapsWide;
-		src: url('./fonts/5e/Nodesto Caps Wide.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal
-	}
-
-	@font-face {
-		font-family: Overpass;
-		src: url('./fonts/5e/Overpass Medium.woff2') format('woff2');
-		font-weight: 500;
-		font-style: normal;
-	}
-
-	@font-face {
-		font-family: Davek;
-		src: url('./fonts/5e/Davek.woff2') format('woff2');
-		font-weight: 500;
-		font-style: normal;
-	}
-
-	@font-face {
-		font-family: Iokharic;
-		src: url('./fonts/5e/Iokharic.woff2') format('woff2');
-		font-weight: 500;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: Rellanic;
-		src: url('./fonts/5e/Rellanic.woff2') format('woff2');
-		font-weight: 500;
-		font-style: normal;
-	}
+  .frontCover{
+    h1 {
+      margin-top     : 1.2cm;
+      margin-bottom  : 0;
+      font-family    : 'NodestoCapsCondensed';
+      font-size      : 2.245cm;
+      font-weight    : normal;
+      line-height    : 0.85em;
+      color          : white;
+      text-shadow    : unset;
+      text-transform : uppercase;
+      filter         : drop-shadow(0 0 1.5px black) drop-shadow(0 0 0 black)
+        drop-shadow(0 0 0 black) drop-shadow(0 0 0 black)
+        drop-shadow(0 0 0 black) drop-shadow(0 0 0 black)
+        drop-shadow(0 0 0 black) drop-shadow(0 0 0 black);
+    }
+    h2 {
+      font-family    : 'NodestoCapsCondensed';
+      font-size      : 0.85cm;
+      font-weight    : normal;
+      color          : white;
+      letter-spacing : 0.1cm;
+      filter         : drop-shadow(0 0 1px black) drop-shadow(0 0 0 black)
+        drop-shadow(0 0 0 black) drop-shadow(0 0 0 black)
+        drop-shadow(0 0 0 black) drop-shadow(0 0 0 black)
+        drop-shadow(0 0 0 black) drop-shadow(0 0 0 black);
+    }
+  }
 
   :root {
     --color-primary: 75 38 143; /* 135 94 212 */
