@@ -2,7 +2,7 @@
 import { getEntry } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
 import { importImage } from "astro-imagetools/api";
-import "../styles/wizard-main.less";
+import "../styles/global.css";
 
 const { data } = await getEntry("config", "about");
 
@@ -29,7 +29,7 @@ const pageTitle = `${title} | ${data.sitename}`;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
-
+<style lang="less"></style>
 <!-- Canonical URL -->
 <link rel="canonical" data-pagefind-meta="url[href]" href={canonicalURL} />
 

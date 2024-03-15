@@ -26,8 +26,8 @@ module.exports = {
         xs: "500px",
       },
       fontFamily: {
-        sans: ["ScalySansRemake"],
-        serif: ["BookInsanityRemake"]
+        sans: ["'Bookinsanity'", "Helvetica", "Verdana", "sans-serif"],
+        body: ["'MrEavesRemake'", "Helvetica", "Verdana", "serif"],
       },
     },
   },
