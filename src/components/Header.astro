@@ -2,7 +2,6 @@
 import NavMobile from "@components/navigation/NavMobile.vue";
 import { Icon } from "astro-icon/components";
 
-import PageFind from "@components/common/PageFind.astro";
 import CartButton from "@components/shop/CartButton.vue";
 import ColorSwitch from "@components/common/ColorSwitch.vue";
 import { t } from "@util/translate";
@@ -41,33 +40,6 @@ const isActive = (href) => {
     {
       (
         <ul class="nav-underline relative -mr-4  ml-auto flex flex-nowrap justify-end pl-4 uppercase md:mr-0">
-          <li>
-            <CartButton
-              label={t("cart")}
-              client:idle
-              transition:persist
-              transition:name="cart"
-            >
-              <Icon name="shopping-cart" class="h-6 w-6" />
-            </CartButton>
-          </li>
-          <li>
-            <PageFind />
-          </li>
-
-          {social &&
-            social.slice(0, 3).map((link) => (
-              <li class="hidden md:block">
-                <a
-                  href={link.href}
-                  class="grid h-full place-items-center"
-                  target="_blank"
-                  aria-label={link.label}
-                >
-                  <Icon name={link.icon} class="w-6 h-6" />
-                </a>
-              </li>
-            ))}
 
           <li>
             <ColorSwitch client:idle />
@@ -102,26 +74,6 @@ const isActive = (href) => {
                 ))}
               </ul>
 
-              <ul
-                class="relatives flex w-full flex-wrap justify-center gap-2 py-4"
-                slot="social"
-              >
-                {social.map((link, index) => (
-                  <li
-                    class="inner"
-                    style={`--animation-delay: ${(index + 1) * 100}ms`}
-                  >
-                    <a
-                      href={link.href}
-                      class="grid h-full place-items-center "
-                      target="_blank"
-                      aria-label={link.label}
-                    >
-                      <Icon name={link.icon} class="h-8 w-8" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </NavMobile>
           </li>
         </ul>
