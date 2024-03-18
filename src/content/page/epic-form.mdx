@@ -1,0 +1,80 @@
+---
+title: Epic Games
+description: play in epic games
+template: split
+pubDate: 2023-08-17T10:23:53.440Z
+layout-hidden: blog
+thumbnail: /src/assets/about-us.jpeg
+style:
+  hero_template: image
+  template: full
+  container: md
+  page_class: test-page
+  block_class: text-center
+---
+
+<form>
+    <h4>Parent / Guardian Information</h4>
+    <div class="card p-4 space-y-4" data-theme="dark">
+        <label>Email address*: <input type="email" name="parent_guardian_email" class="input w-full max-w-xs" /></label>
+        <label>Parent / Guardian Name*: <input type="text" name="parent_guardian_name" class="input input-bordered" /></label>
+        <label>Contact number: <input type="tel" name="contact_number" class="input input-bordered" /></label>
+    </div>
+    
+    <hr/>
+    
+    <h4>Adventurer Details</h4>
+    <div class="p-4 space-y-4">
+        Name*: <input type="text" name="adventurer_name" class="input input-bordered" />
+        Age*: <select name="age" class="select select-bordered"><option value="" selected disabled hidden></option><option value="8-11">8-11</option><option value="12-17">12-17</option></select>
+        Experience level*:
+        <label><input type="radio" name="experience_level" value="Level 0" class="radio radio-primary" />New to D&amp;D</label>
+        <label><input type="radio" name="experience_level" value="Level 1" class="radio radio-primary" />Some knowledge, character created with help</label>
+        <label><input type="radio" name="experience_level" value="Level 2" class="radio radio-primary" />Independent character creation, knows basics</label>
+        <label><input type="radio" name="experience_level" value="Level 3" class="radio radio-primary" />Dungeon Master or aspiring</label>
+    </div>
+    
+    <hr/>
+    
+    <h4>Location & Game Preferences</h4>
+    <div class="p-4 space-y-4">
+        Preferred location for regular games*:
+        <label><input type="checkbox" name="location[]" value="North York" class="checkbox checkbox-primary" />North York</label>
+        <label><input type="checkbox" name="location[]" value="York Region" class="checkbox checkbox-primary" />York Region</label>
+        <label><input type="checkbox" name="location[]" value="Downtown Toronto" class="checkbox checkbox-primary" />Downtown Toronto</label>
+        Game system preference*:
+        <label><input type="checkbox" name="game_system[]" value="D&amp;D 5e" class="checkbox checkbox-primary" />D&amp;D 5e</label>
+        <label><input type="checkbox" name="game_system[]" value="Pathfinder2" class="checkbox checkbox-primary" />Pathfinder2</label>
+        <label><input type="checkbox" name="game_system[]" value="My Little Pony RPG" class="checkbox checkbox-primary" />My Little Pony RPG</label>
+        <label><input type="checkbox" name="game_system[]" value="Marvel RPG" class="checkbox checkbox-primary" />Marvel RPG</label>
+        <label><input type="checkbox" name="game_system[]" value="Other" class="checkbox checkbox-primary" />Other: </label><input type="text" name="other_gamesystem" class="input input-bordered" />
+        Available days of the week*:
+        <label><input type="checkbox" name="available_days[]" value="Monday" class="checkbox checkbox-primary" />Monday</label>
+        <label><input type="checkbox" name="available_days[]" value="Tuesday" class="checkbox checkbox-primary" />Tuesday</label>
+        <label><input type="checkbox" name="available_days[]" value="Wednesday" class="checkbox checkbox-primary" />Wednesday</label>
+        <label><input type="checkbox" name="available_days[]" value="Thursday" class="checkbox checkbox-primary" />Thursday</label>
+        <label><input type="checkbox" name="available_days[]" value="Friday" class="checkbox checkbox-primary" />Friday</label>
+        <label><input type="checkbox" name="available_days[]" value="Saturday" class="checkbox checkbox-primary" />Saturday</label>
+    </div>
+                
+    <hr/>
+    
+    <h4>Special Events & Camps</h4>
+    <div class="p-4 space-y-4 ">
+        Interested in special events:
+        <label><input type="checkbox" name="special_events[]" value="Birthday Party" class="checkbox checkbox-primary" />Birthday Party</label>
+        <label><input type="checkbox" name="special_events[]" value="Special Event" class="checkbox checkbox-primary" />Special Event</label>
+        <label><input type="checkbox" name="special_events[]" value="Monthly Game Night" class="checkbox checkbox-primary" />Monthly Game Night</label>
+        <label><input type="checkbox" name="special_events[]" value="Fantasy Day Camp" class="checkbox checkbox-primary" />Fantasy Day Camp</label>
+        <label><input type="checkbox" name="special_events[]" value="Family Fantasy Summer Camp" class="checkbox checkbox-primary" />Family Fantasy Summer Camp</label>
+        <label><input type="checkbox" name="special_events[]" value="Other" class="checkbox checkbox-primary" />Other: </label><input type="text" name="other_specialevents" class="input input-bordered" />
+    </div>
+            
+    <div class="p-4 space-y-4">
+        Health & Safety:
+        Allergies or medical conditions: <textarea rows= "5" class="textarea textarea-bordered"></textarea>
+        Additional notes or concerns: <textarea rows = "5" class="textarea textarea-bordered"></textarea>
+    
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+    </div>
+</form>

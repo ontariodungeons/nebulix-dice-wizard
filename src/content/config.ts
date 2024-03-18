@@ -57,6 +57,7 @@ const blocks = z
 						label: z.string().optional(),
 						content: z.string().optional(),
 						color: z.string().optional(),
+						link: z.string().optional(),
 						icon: z.string().transform((val) => getIconName(val)).optional(),
 					})
 				)

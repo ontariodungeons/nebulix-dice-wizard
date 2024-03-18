@@ -26,7 +26,13 @@ const { content, container, features } = Astro.props;
                     feature.color || "surface-primary"
                   } grid h-14 w-14 place-items-center overflow-hidden rounded-full`}
                 >
-                  <Icon name={getIconName(feature.icon)} class={`h-8 w-8 `} />
+                  {feature.link ? (
+                    <a href={feature.link}>
+                      <Icon name={getIconName(feature.icon)} class={`h-8 w-8 `} />
+                    </a>
+                  ) : (
+                    <Icon name={getIconName(feature.icon)} class={`h-8 w-8 `} />
+                  )}
                 </div>
               )}
               <div
@@ -49,3 +55,4 @@ const { content, container, features } = Astro.props;
     }
   }
 </style>
+

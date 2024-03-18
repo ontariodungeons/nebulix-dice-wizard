@@ -39,4 +39,8 @@ module.exports = {
       });
     }),
   ],
+  daisyui: {
+    themes: ["luxury", "dark", "light"]
+  },
+
 };
