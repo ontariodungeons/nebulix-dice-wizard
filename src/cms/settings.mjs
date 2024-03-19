@@ -1,4 +1,4 @@
-import { t } from "@util/translate";
+import { t } from "@/util/translate";
 import { buttons, style } from "./common.mjs";
 
 export const settings = {

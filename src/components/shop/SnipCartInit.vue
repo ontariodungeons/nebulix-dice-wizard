@@ -78,12 +78,12 @@ onMounted(() => {
     ----------------- */
   --color-default: theme(colors.dark);
   --color-alt: theme(colors.gray.400);
-  --color-icon: theme(colors.primary);
+  --color-icon: theme(colors.primary.DEFAULT);
   --color-success: theme(colors.success);
   --color-error: theme(colors.danger);
 
-  --color-link: theme(colors.primary);
-  --color-link-hover: theme(colors.accent);
+  --color-link: theme(colors.primary.DEFAULT);
+  --color-link-hover: theme(colors.accent.DEFAULT);
   --color-link-active: var(--color-link);
   --color-link-focus: var(--color-link);
 
@@ -111,7 +111,7 @@ onMounted(() => {
   --color-buttonPrimary-success: var(--color-buttonPrimary);
   --color-buttonPrimary-error: var(--color-buttonPrimary);
 
-  --color-buttonSecondary: theme(colors.primary);
+  --color-buttonSecondary: theme(colors.primary.DEFAULT);
   --color-buttonSecondary-hover: theme(colors.white);
   --color-buttonSecondary-active: var(--color-buttonSecondary);
   --color-buttonSecondary-focus: var(--color-buttonSecondary);
@@ -190,7 +190,7 @@ onMounted(() => {
   --bgColor-input-error: var(--bgColor-input);
   --bgColor-input-autofill: theme(colors.light);
 
-  --bgColor-buttonPrimary: theme(colors.primary);
+  --bgColor-buttonPrimary: theme(colors.primary.DEFAULT);
   --bgColor-buttonPrimary-hover: theme(colors.white);
   --bgColor-buttonPrimary-active: var(--bgColor-buttonPrimary);
   --bgColor-buttonPrimary-focus: var(--bgColor-buttonPrimary);
@@ -199,7 +199,7 @@ onMounted(() => {
   --bgColor-buttonPrimary-error: theme(colors.danger);
 
   --bgColor-buttonSecondary: theme(colors.white);
-  --bgColor-buttonSecondary-hover: theme(colors.primary);
+  --bgColor-buttonSecondary-hover: theme(colors.primary.DEFAULT);
   --bgColor-buttonSecondary-active: var(--bgColor-buttonSecondary);
   --bgColor-buttonSecondary-focus: var(--bgColor-buttonSecondary);
   --bgColor-buttonSecondary-disabled: theme(colors.gray.300);
@@ -214,9 +214,9 @@ onMounted(() => {
   --bgColor-buttonDanger-success: hsl(144, 66%, 30%);
   --bgColor-buttonDanger-error: hsl(6, 60%, 35%);
 
-  --bgColor-badge: theme(colors.accent);
-  --bgColor-badge-active: theme(colors.secondary);
-  --bgColor-badge-disabled: theme(colors.accent);
+  --bgColor-badge: theme(colors.accent.DEFAULT);
+  --bgColor-badge-active: theme(colors.secondary.DEFAULT);
+  --bgColor-badge-disabled: theme(colors.accent.DEFAULT);
 
   /* ----------------- 
         Shadows

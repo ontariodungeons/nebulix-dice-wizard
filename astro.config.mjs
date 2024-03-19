@@ -12,6 +12,7 @@ const remarkEmbedder = fauxRemarkEmbedder.default;
 const oembedTransformer = fauxOembedTransformer.default;
 import vue from "@astrojs/vue";
 /** @type {import('astro-m2dx').Options} */
+import react from "@astrojs/react";
 const m2dxOptions = {
   exportComponents: true,
   unwrapImages: true,
@@ -22,7 +23,7 @@ const m2dxOptions = {
 // https://astro.build/config
 export default defineConfig({
   site: "https://ontariodungeons.com",
-  integrations: [icon(), mdx({}), sitemap(), tailwind(), vue({
+  integrations: [react(), tailwind(), icon(), mdx({}), sitemap(), vue({
     appEntrypoint: "/src/pages/_app"
   }), astroImageTools],
   markdown: {
@@ -42,12 +43,5 @@ export default defineConfig({
       },
       assetsInlineLimit: 10096
     }
-  },
-  build: {
-    inlineStylesheets: "always"
-  },
-  scopedStyleStrategy: "attribute",
-  prefetch: {
-    defaultStrategy: "viewport"
   }
 });

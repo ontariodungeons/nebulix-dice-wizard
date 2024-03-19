@@ -1,115 +1,105 @@
 ---
-import { getEntry } from "astro:content";
-import { marked } from "marked";
-import { Picture } from "astro-imagetools/components";
-import BaseHead from "@components/BaseHead.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Init from "@components/common/Init.vue";
-import SnipCart from "@components/shop/SnipCartInit.vue";
-import ContactDialog from "@components/common/ContactDialog.vue";
-import { Icon } from "astro-icon/components";
-import { t } from "@util/translate";
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { ModeToggle } from '@/components/ModeToggle';
 
+type Props = CollectionEntry<'blog'>['data'];
 
-
-const lang = import.meta.env.WEBSITE_LANGUAGE;
-const currency = import.meta.env.CURRENCY;
-const snipcartKey = import.meta.env.SNIPCART_KEY;
-const { title, description, pageClass, thumbnail, og_image } = Astro.props;
-const navigation = await getEntry("config", "navigation");
-const about = await getEntry("config", "about");
-const contact = await getEntry("config", "contact");
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
+<script is:inline>
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+ 
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+</script>
 
-<!doctype html>
-<html lang={lang} data-currency={currency} data-theme="luxury">
-  <head>
-    <BaseHead
-      title={title}
-      description={description}
-      thumbnail={!!og_image ? og_image : thumbnail}
-    />
-  </head>
-  <body class={`surface-base ${pageClass || ""}`}>
-    {
-      snipcartKey && (
-        <SnipCart
-          transition:persist
-          transition:name="snipcart-base"
-          snipcartKey={snipcartKey}
-          client:idle
-        />
-      )
-    }
-    <Header
-      title={title}
-      menu={navigation.data.main_menu}
-      social={contact.data.social}
-      about={about.data}
-    />
-    <main>
-      <slot />
-    </main>
-    <Footer>
-      <slot name="footer" />
-      <div class="pointer-events-none fixed bottom-0 right-0 z-50 w-full">
-        <div class="container-xl flex justify-end pb-4">
-          <a
-            href="#top"
-            aria-label={t("back_to_top")}
-            class="btn btn-icon surface-primary btn-to-top pointer-events-auto opacity-0"
-          >
-            <Icon name="up" class="w-6" /></a
-          >
-        </div>
-      </div>
-    </Footer>
-    <Init client:idle />
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin: 0;
+			}
+			.hero-image {
+				width: 100%;
+			}
+			.hero-image img {
+				display: block;
+				margin: 0 auto;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.prose {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			.title {
+				margin-bottom: 1em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.title h1 {
+				margin: 0 0 0.5em 0;
+			}
+			.date {
+				margin-bottom: 0.5em;
+				color: rgb(var(--gray));
+			}
+			.last-updated-on {
+				font-style: italic;
+			}
+		</style>
+	</head>
 
-    <ContactDialog client:idle contact={contact.data.form}>
-      {
-        contact?.data?.form?.intro && (
-          <div
-            set:html={marked.parse(contact.data.form.intro)}
-            slot="content"
-          />
-        )
-    }
-      <Picture
-        slot="image"
-        src={contact.data.form.thumbnail}
-        alt={`contact`}
-        sizes="50vw"
-        aspect={4 / 5}
-        format={["webp"]}
-        fit="cover"
-        layout="fill"
-        placeholder="blurred"
-        position="attention"
-        loading="lazy"
-        sizes="(max-width: 768px) 100vw, 40vw"
-        breakpoints={[420, 725, 960]}
-        artDirectives={[
-          {
-            media: "(max-width: 768px)",
-            ar: 21 / 9,
-            src: contact.data.form.thumbnail,
-            layout: "constrained",
-            breakpoints: [500, 601, 768, 820, 962, 1280, 1440, 1536, 1920],
-          },
-        ]}
-      />
-      <Icon name="close" class="w-6" />
-    </ContactDialog>
-
-    <script>
-      const html = document.getElementsByTagName("html")[0];
-      const SmoothScroll = () => {
-        html.style["scroll-behavior"] = "auto";
-      };
-      SmoothScroll();
-      document.addEventListener("astro:beforeload", SmoothScroll);
-    </script>
-  </body>
+	<body>
+		<Header />
+		<ModeToggle client:load />
+		<main>
+			<article>
+				<div class="hero-image">
+					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+				</div>
+				<div class="prose">
+					<div class="title">
+						<div class="date">
+							<FormattedDate date={pubDate} />
+							{
+								updatedDate && (
+									<div class="last-updated-on">
+										Last updated on <FormattedDate date={updatedDate} />
+									</div>
+								)
+							}
+						</div>
+						<h1>{title}</h1>
+						<hr />
+					</div>
+					<slot />
+				</div>
+			</article>
+		</main>
+		<Footer />
+	</body>
 </html>

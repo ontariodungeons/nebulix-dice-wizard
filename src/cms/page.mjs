@@ -1,6 +1,6 @@
 import { toolbarButtons, blocks, buttons, style } from "./common.mjs";
 
-import { t } from "@util/translate";
+import { t } from "@/util/translate";
 export const page = {
   name: "page",
   identifier_field: "name",

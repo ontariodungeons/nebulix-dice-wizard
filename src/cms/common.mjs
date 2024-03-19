@@ -1,4 +1,4 @@
-import { t } from "@util/translate";
+import { t } from "@/util/translate";
 
 export const style = {
   name: "style",

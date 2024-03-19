@@ -1,5 +1,5 @@
 import { toolbarButtons, style, buttons, blocks } from "./common.mjs";
-import { t } from "@util/translate";
+import { t } from "@/util/translate";
 export const post = {
   name: "posts",
   identifier_field: "name",

@@ -1,5 +1,5 @@
 import { defineCollection, reference, z } from 'astro:content'
-import { getIconName } from '@util/helpers'
+import { getIconName } from '@/util/helpers'
  
 
 const blocks = z

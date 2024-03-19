@@ -1,4 +1,4 @@
-import { t } from "@util/translate";
+import { t } from "@/util/translate";
 import { toolbarButtons } from "./common.mjs";
 
 export const menu = {

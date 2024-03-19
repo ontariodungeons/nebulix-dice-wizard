@@ -1,23 +1,49 @@
 {
-  "extends": "astro/tsconfigs/base",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "allowJs": true,
     "strictNullChecks": true,
     "verbatimModuleSyntax": true,
-
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@util/*": ["src/util/*"],
-      "@cms/*": ["src/cms/*"],
-      "@icons/*": ["src/icons/*"],
-      "@src/*": ["src/*"],
-      "@assets/*": ["src/assets/*"],
-      "@locales/*": ["src/locales/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@util/*": [
+        "./src/util/*"
+      ],
+      "@cms/*": [
+        "./src/cms/*"
+      ],
+      "@icons/*": [
+        "./src/icons/*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@locales/*": [
+        "./src/locales/*"
+      ]
     },
+    "jsx": "react-jsx",
+    "types": [
+      "vue3-toastify/global"
+    ],
+    "jsxImportSource": "react"
 
-    "jsx": "preserve",
-    "types": ["vue3-toastify/global"]
-  }
+  },
+  "include": ["./src/env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["dist"]
 }
