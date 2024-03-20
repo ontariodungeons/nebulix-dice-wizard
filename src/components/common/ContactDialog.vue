@@ -298,4 +298,3 @@ watch(
   }
 }
 </style>
-@/utils/translate@/util/translate

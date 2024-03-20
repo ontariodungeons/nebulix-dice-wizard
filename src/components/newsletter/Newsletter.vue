@@ -84,4 +84,3 @@ const submit = () => {
   }
 };
 </script>
-@/utils/translate@/util/translate
