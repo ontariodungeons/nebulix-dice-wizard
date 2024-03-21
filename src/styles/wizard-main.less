@@ -1,8 +1,8 @@
-@import (less) './themes/V3/5ePHB/style.less';
-@import (less) './../fonts/fantasy-fonts.css';
-@import (less) './themes/fonts/5e/fonts.css';
-@import url('./shadcn-main.css');
 
+@import (less) './themes/V3/5ePHB/style.less';
+@import (less) './themes/fonts/5e/fonts.less';
+
+@import url('./global-shadcn.css');
 
 @layer base {
 
@@ -11,11 +11,11 @@
     }
   
     h1, h2 {
-      font-family: 'Mr Eaves Small Caps';
+      font-family: 'NodestoCapsCondensed';
     }
     
     h3{
-      font-family:  'NodestoCapsCondensed';
+      font-family:  'MrEavesRemake';
     } 
     
     h4, h5, h6 {
@@ -23,14 +23,11 @@
     }
 
     table {
-      font-family: 'Zatanna Misdirection';
+      font-family: 'ScalySansRemake';
     }
 
     p {
       font-family: "ScalySansRemake";
     }
 
-    footer {
-
-    }
 }

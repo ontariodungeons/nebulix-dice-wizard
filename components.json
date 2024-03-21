@@ -4,10 +4,14 @@
   "rsc": false,
   "tsx": true,
   "tailwind": {
-    "config": "tailwind.config.js",
-    "css": "./src/styles/shadcn-main.css",
-    "baseColor": "zinc",
+    "config": "tailwind.config.mjs",
+    "css": "./src/styles/wizard-main.less",
+    "baseColor": "slate",
     "cssVariables": true,
     "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils"
   }
 }

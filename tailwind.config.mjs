@@ -78,8 +78,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        sans: ["'Inter Tight Variable'", "Helvetica", "Verdana", "sans-serif"],
-        body: ["'Inter Tight Variable'", "Helvetica", "Verdana", "sans-serif"],
+        sans: ["'ScalySansRemake'", "Helvetica", "Verdana", "sans-serif"],
+        body: ["'BookInsanityRemake'", "Helvetica", "Verdana", "sans-serif"],
       },
       boxShadow: {
         inset: " inset 2px 2px 40px -20px rgba(0, 0, 0, 0.3)",
