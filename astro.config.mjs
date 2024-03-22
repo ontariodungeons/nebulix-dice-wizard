@@ -23,9 +23,17 @@ const m2dxOptions = {
 // https://astro.build/config
 export default defineConfig({
   site: "https://ontariodungeons.com",
-  integrations: [react(), tailwind(), icon(), mdx({}), sitemap(), vue({
-    appEntrypoint: "/src/pages/_app"
-  }), astroImageTools],
+  integrations: [
+    react({
+      include: ['**/react/*']
+    }), 
+    tailwind(), 
+    icon(), 
+    mdx({}), 
+    sitemap(), 
+    vue({
+      appEntrypoint: "/src/pages/_app"
+    }), astroImageTools],
   markdown: {
     extendDefaultPlugins: true,
     remarkPlugins: [[remarkEmbedder, {
