@@ -1,8 +1,11 @@
 import fs from "fs"
 import path from "path"
 import { faker } from "@faker-js/faker"
+import { fileURLToPath } from 'node:url';
 
 import { labels, priorities, statuses } from "./data"
+
+const tasksPath = fileURLToPath(new URL('tasks.json', import.meta.url));
 
 const tasks = Array.from({ length: 100 }, () => ({
   id: `TASK-${faker.number.int({ min: 1000, max: 9999 })}`,
@@ -13,7 +16,7 @@ const tasks = Array.from({ length: 100 }, () => ({
 }))
 
 fs.writeFileSync(
-  path.join(__dirname, "tasks.json"),
+  tasksPath,
   JSON.stringify(tasks, null, 2)
 )
 
