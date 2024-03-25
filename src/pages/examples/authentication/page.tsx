@@ -1,10 +1,10 @@
-import type { Metadata } from "next"
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import { UserAuthForm } from "@/pages/examples/authentication/components/user-auth-form"
+import { buttonVariants } from "@/registry/new-york/ui/button"
+import { UserAuthForm } from "@/app/examples/authentication/components/user-auth-form"
 
 export const metadata: Metadata = {
   title: "Authentication",

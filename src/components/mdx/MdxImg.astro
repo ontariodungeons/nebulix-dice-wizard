@@ -22,7 +22,7 @@ function isPixelBasedImage(extension) {
   return pixelBasedFormats.includes(extension.toLowerCase());
 }
 const isSvg = !isPixelBasedImage(ext);
-
+export const prerender = true;
 //
 ---
 

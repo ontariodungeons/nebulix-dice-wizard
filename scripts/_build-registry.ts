@@ -10,7 +10,7 @@ import { registrySchema } from "../registry/schema"
 import { styles } from "../registry/styles"
 import { themes } from "../registry/themes"
 
-const REGISTRY_PATH = path.join(process.cwd(), "public/registry")
+const REGISTRY_PATH = path.join(process.cwd(), "public/src")
 
 const result = registrySchema.safeParse(registry)
 
@@ -49,7 +49,7 @@ for (const style of styles) {
       name: "${item.name}",
       type: "${item.type}",
       registryDependencies: ${JSON.stringify(item.registryDependencies)},
-      component: React.lazy(() => import("@/registry/${style.name}/${type}/${
+      component: React.lazy(() => import("@./../registry/${style.name}/${type}/${
       item.name
     }")),
       files: [${resolveFiles.map((file) => `"${file}"`)}],

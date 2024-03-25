@@ -11,9 +11,9 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@/components/ui/context-menu"
+} from "@/registry/new-york/ui/context-menu"
 
-import type { Album } from "../data/albums"
+import { Album } from "../data/albums"
 import { playlists } from "../data/playlists"
 
 interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {

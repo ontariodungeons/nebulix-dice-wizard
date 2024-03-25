@@ -1,11 +1,11 @@
 ---
-import NavMobile from "@components/navigation/NavMobile.vue";
+import NavMobile from "./../components/navigation/NavMobile.vue";
 import { Icon } from "astro-icon/components";
 
-import PageFind from "@components/common/PageFind.astro";
-import CartButton from "@components/shop/CartButton.vue";
-import ColorSwitch from "@components/common/ColorSwitch.vue";
-import { t } from "@util/translate";
+import PageFind from "./../components/common/PageFind.astro";
+import CartButton from "./../components/shop/CartButton.vue";
+import ColorSwitch from "./../components/common/ColorSwitch.vue";
+import { t } from "./../util/translate";
 
 const { menu, title, social } = Astro.props;
 const currentPath = Astro.url.pathname.split("/")[1];

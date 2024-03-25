@@ -1,0 +1,28 @@
+---
+tag:
+  - Learn
+  - Safety
+title: The Hero's Handbook
+description: We must have some rules or it will be chaos
+intro: Get insights on customizing your web templates, from layout options to
+  collection styles and more
+style:
+  template: split
+  card_template: grid
+  hero_template: image
+  container: md
+  hero_surface: surface-dark
+  hero_image_opacity: ""
+pubDate: 2023-09-03T12:14:12.256+02:00
+thumbnail: /src/assets/nebulix-template.jpeg
+---
+
+#To the outer planes
+
+This page is about all the amazing things we are working on. I like to say that everything I do is making magic. What is magic other than the collective power of creativity and belief? The dice wizard is a storyteller who started with folk music, stories, and fairy tales. None of the folk community exists on it's own, and many of the ideas here may stay in the outer planes without a community wanting to participate.
+
+These ideas can be yours as well, and if you have something you think should be added to the list please contact me, the dice wizard welcomes your [initiative]('./initiative').
+
+* [ ]AI game assistant able to respond to rules questions, and make judgements over whether RAW (rules as written) or a table rule is appropriate
+* [ ]Weekly online office hours.
+* [ ]Summer Retreat: Making a camp function well is a lot of work. I'm looking for a handful of famililies to spend a weekend playing D&D and workshopping/brainstorming how to make a camp function well.

@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils"
 import { Badge } from "@/registry/new-york/ui/badge"
 import { ScrollArea } from "@/registry/new-york/ui/scroll-area"
 import { Separator } from "@/registry/new-york/ui/separator"
-import { Mail } from "@/pages/examples/mail/data"
-import { useMail } from "@/pages/examples/mail/use-mail"
+import { Mail } from "@/app/examples/mail/data"
+import { useMail } from "@/app/examples/mail/use-mail"
 
 interface MailListProps {
   items: Mail[]

@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@components/ui/button"
 import {
   Form,
   FormControl,
@@ -12,11 +12,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Textarea } from "@/components/ui/textarea"
-import { Input } from "@/components/ui/input"
-import { Checkbox } from "@/components/ui/checkbox"
-import { toast } from "@/components/ui/use-toast"
+} from "@components/ui/form"
+import { Textarea } from "@components/ui/textarea"
+import { Input } from "@components/ui/input"
+import { Checkbox } from "@components/ui/checkbox"
+import { toast } from "@components/ui/use-toast"
 
 const days_of_week = [
   {

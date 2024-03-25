@@ -1,11 +1,12 @@
-"use client"
 
+
+// @ts-nocheck
 import { Cross2Icon } from "@radix-ui/react-icons"
-import type { Table } from "@tanstack/react-table"
+import { Table } from "@tanstack/react-table"
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { DataTableViewOptions } from "@/pages/examples/tasks/components/data-table-view-options"
+import { Button } from "@/registry/new-york/ui/button"
+import { Input } from "@/registry/new-york/ui/input"
+import { DataTableViewOptions } from "@/app/examples/tasks/components/data-table-view-options"
 
 import { priorities, statuses } from "../data/data"
 import { DataTableFacetedFilter } from "./data-table-faceted-filter"

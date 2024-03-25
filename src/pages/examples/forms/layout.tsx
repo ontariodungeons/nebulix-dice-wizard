@@ -1,8 +1,8 @@
-import type { Metadata } from "next"
+import { Metadata } from "next"
 import Image from "next/image"
 
-import { Separator } from "@/components/ui/separator"
-import { SidebarNav } from "@/pages/examples/forms/components/sidebar-nav"
+import { Separator } from "@/registry/new-york/ui/separator"
+import { SidebarNav } from "@/app/examples/forms/components/sidebar-nav"
 
 export const metadata: Metadata = {
   title: "Forms",

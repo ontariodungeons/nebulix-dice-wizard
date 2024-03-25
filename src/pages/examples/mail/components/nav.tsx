@@ -1,4 +1,4 @@
-"use client"
+
 
 import Link from "next/link"
 import { LucideIcon } from "lucide-react"
@@ -9,7 +9,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/registry/new-york/ui/tooltip"
 
 interface NavProps {
   isCollapsed: boolean

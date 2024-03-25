@@ -1,4 +1,4 @@
-"use client"
+
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { ChevronDownIcon } from "@radix-ui/react-icons"

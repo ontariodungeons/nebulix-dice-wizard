@@ -1,24 +1,17 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
+    "target": "es6",
+    "module": "ESNext",
+    "esModuleInterop": true,
+    "isolatedModules": false,
     "strictNullChecks": true,
     "verbatimModuleSyntax": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "incremental": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "moduleResolution": "node",
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "preserveWatchOutput": true,
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
+      "@components/*": ["src/components/*", "components/*"],
+      "@/components/*": ["src/components/*", "components/*"],
       "@pages/*": ["src/pages/*"],
       "@layouts/*": ["src/layouts/*"],
       "@util/*": ["src/util/*"],
@@ -27,26 +20,19 @@
       "@src/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
       "@locales/*": ["src/locales/*"],
-      "@types/*": ["src/types/*"],
-      "@/*": ["./src/*"],
+      "@/app/*": ["src/pages/*"],
+      "@/registry/*": ["registry/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/config/*": ["src/config/*"],
+      "@/types/*": ["src/types/*"],
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "jsx": "preserve",
     "types": ["vue3-toastify/global"],
   },
-  "include": [
-    "next-env.d.ts",
-    "**/**/**/*.ts",
-    "**/**/**/*.tsx",
-    "**/**/**/*.json",
-    "src/pages/examples/**/*.tsx",
-    "src/pages/examples/**/*.json",
-    ".next/types/**/*.ts",
-    ".contentlayer/generated"
-  ],
   "exclude": ["node_modules", "./scripts/build-registry.ts"]
 }
