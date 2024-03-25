@@ -145,8 +145,6 @@ body {
   @screen xs {
     --spacing: 2rem;
   }
-  font-family: "Inter Tight Variable", "Adjusted Arial Fallback", "arial",
-    sans-serif;
   --container-spacing: calc(var(--spacing) * 2);
   --grid-spacing: calc(var(--spacing) / 2);
 }
