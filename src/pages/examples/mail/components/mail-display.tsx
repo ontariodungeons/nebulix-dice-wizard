@@ -1,7 +1,7 @@
-import addDays from "date-fns/addDays"
-import addHours from "date-fns/addHours"
-import format from "date-fns/format"
-import nextSaturday from "date-fns/nextSaturday"
+import { addDays } from "date-fns/addDays"
+import { addHours } from "date-fns/addHours"
+import { format } from "date-fns"
+import { nextSaturday } from "date-fns/nextSaturday"
 import {
   Archive,
   ArchiveX,
@@ -42,7 +42,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/registry/new-york/ui/tooltip"
-import { Mail } from "@/app/examples/mail/data"
+import { type Mail } from "@/app/examples/mail/data"
 
 interface MailDisplayProps {
   mail: Mail | null

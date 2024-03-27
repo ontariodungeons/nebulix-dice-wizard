@@ -25,6 +25,8 @@
       "@/hooks/*": ["hooks/*"],
       "@/config/*": ["src/config/*"],
       "@/types/*": ["src/types/*"],
+      "@contentlayer/*": [".contentlayer/*"],
+      "@/lib/*": ["lib/*"],
       "@/*": ["./src/*"]
     },
     "plugins": [
@@ -33,6 +35,6 @@
       }
     ],
     "types": ["vue3-toastify/global"],
-  },
+  },  
   "exclude": ["node_modules", "./scripts/build-registry.ts"]
 }

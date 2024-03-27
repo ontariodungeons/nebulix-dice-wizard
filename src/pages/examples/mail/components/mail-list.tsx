@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ComponentProps } from "react"
 import formatDistanceToNow from "date-fns/formatDistanceToNow"
 

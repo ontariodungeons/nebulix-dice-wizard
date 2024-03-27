@@ -1,11 +1,10 @@
 
-
 import * as React from "react"
-import { DropdownMenuTriggerProps } from "@radix-ui/react-dropdown-menu"
+import { type DropdownMenuTriggerProps } from "@radix-ui/react-dropdown-menu"
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
-import { NpmCommands } from "@/types/unist"
+import { type NpmCommands } from "@/types/unist"
 
-import { Event, trackEvent } from "@/lib/events"
+import { type Event, trackEvent } from "@/lib/events"
 import { cn } from "@/lib/utils"
 import { Button } from "@components/ui/button"
 import {

@@ -4,11 +4,11 @@ import path, { basename } from "path"
 import template from "lodash.template"
 import { rimraf } from "rimraf"
 
-import { colorMapping, colors } from "../registry/colors"
-import { registry } from "../registry/registry"
-import { registrySchema } from "../registry/schema"
-import { styles } from "../registry/styles"
-import { themes } from "../registry/themes"
+import { colorMapping, colors } from "@/registry/colors"
+import { registry } from "@/registry/registry"
+import { registrySchema } from "@/registry/schema"
+import { styles } from "@/registry/styles"
+import { themes } from "@/registry/themes"
 
 const REGISTRY_PATH = path.join(process.cwd(), "public/src")
 
@@ -49,7 +49,7 @@ for (const style of styles) {
       name: "${item.name}",
       type: "${item.type}",
       registryDependencies: ${JSON.stringify(item.registryDependencies)},
-      component: React.lazy(() => import("@./../registry/${style.name}/${type}/${
+      component: React.lazy(() => import("@./@/registry/${style.name}/${type}/${
       item.name
     }")),
       files: [${resolveFiles.map((file) => `"${file}"`)}],

@@ -67,7 +67,7 @@ const FormSchema = z.object({
     }),
 })
 
-function RegistrationForm() {
+export function RegistrationForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   })
@@ -140,7 +140,7 @@ function RegistrationForm() {
         />
           <FormField
           control={form.control}
-          name="items"
+          Classname="items"
           render={() => (
             <FormItem>
               <div className="mb-4">
@@ -191,5 +191,3 @@ function RegistrationForm() {
     </Form>
   )
 }
-
-export { RegistrationForm }

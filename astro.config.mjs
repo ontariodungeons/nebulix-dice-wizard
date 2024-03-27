@@ -14,7 +14,7 @@ const oembedTransformer = fauxOembedTransformer.default;
 
 import vue from "@astrojs/vue";
 /** @type {import('astro-m2dx').Options} */
-
+import react from "@astrojs/react";
 const m2dxOptions = {
   exportComponents: true,
   unwrapImages: true,
@@ -23,8 +23,9 @@ const m2dxOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://nebulix.unfolding.io",
+  site: "https://ontariodungeons.com",
   integrations: [
+    react(),
     icon(),
     mdx({}),
     sitemap(),
