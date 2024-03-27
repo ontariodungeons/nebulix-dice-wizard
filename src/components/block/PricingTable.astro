@@ -11,14 +11,14 @@ const id = title ? slugify(title) : "pricing";
   {id}
   class={`container-${
     style?.container || "xl"
-  } fade-up rounded-md features grid gap-8 scroll-m-8`}
+  } phb fade-up rounded-md grid gap-8 scroll-m-8`}
 >
   {title && <h1 class="title-sm fade-up"> {title}</h1>}
   {
     prices && prices.length > 0 && (
-      <div class="flex flex-wrap gap-8">
+      <div class="flex flex-wrap gap-8 page">
         {prices.map((price) => (
-          <div class="surface-price flex min-w-[290px] flex-1 grow  overflow-hidden rounded-md @container">
+          <div class="surface-price note flex min-w-[290px]  flex-1 grow overflow-hidden @container">
             <div class="price-grid grid w-full @xl:flex">
               <div
                 class={`relative h-fit @xl:h-full @xl:w-[16rem] @2xl:w-[31%] ${price.surface}`}
@@ -70,23 +70,4 @@ const id = title ? slugify(title) : "pricing";
   }
 </div>
 
-<style>
-  .price-grid {
-    grid-template-rows: min-content auto min-content;
-  }
 
-  .surface-price {
-    @apply bg-white text-dark dark:bg-black dark:text-light;
-    .shape-fill {
-      @apply fill-white dark:fill-black;
-    }
-  }
-  .features {
-    &__item {
-      min-width: min(100vw - var(--spacing), 16rem);
-      @screen sm {
-        max-width: 22rem;
-      }
-    }
-  }
-</style>

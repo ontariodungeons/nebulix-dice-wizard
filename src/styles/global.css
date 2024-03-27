@@ -1,4 +1,7 @@
+@import url("phb.standalone.css");
+
 @tailwind base;
+
 
 @layer base {
   :root {
