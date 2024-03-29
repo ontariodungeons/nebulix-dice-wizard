@@ -1,0 +1,34 @@
+body {
+	font-family: 'BookInsanityRemake';
+}
+
+
+table,
+textarea {
+	font-family: 'ScalySansRemake';
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'MrEavesRemake';
+}
+
+
+.dropcap {
+	font-family: 'SolberaImitationRemake';
+	font-size: 3.5cm;
+	line-height: 1em;
+	float: left;
+	margin-right: 0.1em;
+	margin-bottom: 0.1em;
+}
+
+
+.cover {
+	font-family: 'NodestoCapsCondensed';
+}
