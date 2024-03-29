@@ -1,0 +1,57 @@
+---
+import Layout from "@layouts/BaseLayout.astro";
+---
+
+<Layout>
+  <main class="p-4">
+    <h2 class="mb-4 text-xl">Pricing Tiers</h2>
+    <section class="flex flex-wrap">
+      <!-- Beginners -->
+      <div class="w-full p-4 md:w-1/3">
+        <h3 class="mb-2 text-lg">Beginners (Level 1-5)</h3>
+        <p class="mb-2">Price for Kids (9-12 age): $20 per game</p>
+        <p class="mb-2">Price for Teens (13-17 age): $15 per game</p>
+        <p class="mb-2">
+          Price for Adults (18+): Features from other age groups
+        </p>
+        <button
+          class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+          >Sign Up</button
+        >
+      </div>
+
+      <!-- Adventurers -->
+      <div class="w-full p-4 md:w-1/3">
+        <h3 class="mb-2 text-lg">Adventurers (Level 3-10)</h3>
+        <p class="mb-2">Price for Kids, Teens, and Adults: $20 per game</p>
+        <p class="mb-2">
+          Additional materials to improve team play, sound, visuals, maps, and
+          models
+        </p>
+        <button
+          class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+          >Sign Up</button
+        >
+      </div>
+
+      <!-- Heroes -->
+      <div class="w-full p-4 md:w-1/3">
+        <h3 class="mb-2 text-lg">Heroes</h3>
+        <p class="mb-2">Custom Pricing</p>
+        <p class="mb-2">
+          Expanded table rules, backstory, player agency, 3D landscapes, models,
+          documented campaigns, customized handouts, and high-quality loot
+        </p>
+        <button
+          class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+          >Sign Up</button
+        >
+      </div>
+    </section>
+
+    <h2 class="mb-4 mt-8 text-xl">Comparison Table</h2>
+    <table class="min-w-full divide-y divide-gray-200">
+      <!-- Add comparison table rows here -->
+    </table>
+  </main>
+</Layout>

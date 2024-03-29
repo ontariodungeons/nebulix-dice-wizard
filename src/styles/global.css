@@ -1,5 +1,3 @@
-@import url("phb.standalone.css");
-
 @tailwind base;
 
 
@@ -154,27 +152,27 @@ body {
 
 .container {
   width: min(100% - var(--container-spacing), var(--w-md));
-  @apply mx-auto;
+  margin: auto;
   &-xl {
     width: min(100% - var(--container-spacing), var(--w-xl));
-    @apply mx-auto;
+    margin: auto;
   }
 
   &-lg {
     width: min(100% - var(--container-spacing), var(--w-lg));
-    @apply mx-auto;
+    margin: auto;
   }
   &-md {
     width: min(100% - var(--container-spacing), var(--w-md));
-    @apply mx-auto;
+    margin: auto;
   }
   &-sm {
     width: min(100% - var(--container-spacing), var(--w-sm));
-    @apply mx-auto;
+    margin: auto;
   }
   &-full {
     width: calc(100% - var(--container-spacing));
-    @apply mx-auto;
+    margin: auto;
   }
 }
 
