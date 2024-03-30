@@ -3,10 +3,10 @@ import ImageGallery from "./ImageGallery.astro";
 import TextImage from "./TextImage.astro";
 import RecentItems from "./RecentItems.astro";
 import RichText from "./RichText.astro";
-import Features from "./Features.astro";
+import Features from "@components/pricing/WizardFeatures.astro";
 import ShopCategories from "./ShopCategories.astro";
 import ShopProducts from "./ShopProducts.astro";
-import PricingTable from "./PricingTable.astro";
+import WizardPricingTable from "@components/pricing/WizardPricingTable.astro";
 const { slot, ...props } = Astro.props;
 ---
 
@@ -22,5 +22,5 @@ const { slot, ...props } = Astro.props;
   {props.component === "Features" && <Features {...props} />}
   {props.component === "ShopCategories" && <ShopCategories {...props} />}
   {props.component === "ShopProducts" && <ShopProducts {...props} />}
-  {props.component === "PricingTable" && <PricingTable {...props} />}
+  {props.component === "PricingTable" && <WizardPricingTable {...props} />}
 </section>

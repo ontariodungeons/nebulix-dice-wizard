@@ -5,12 +5,12 @@ import { getArchiveNav } from "@util/helpers";
 import { getCollection } from "astro:content";
 import Breadcrumb from "@components/navigation/Breadcrumb.astro";
 import ItemNav from "@components/navigation/ItemNav.astro";
-import PageLayoutSplit from "@layouts/PageLayoutSplit.astro";
-import PageLayoutWide from "@layouts/PageLayoutWide.astro";
+import PageLayoutSplit from "@layouts/WizardLayoutSplit.astro";
+import PageLayoutWide from "@layouts/WizardLayoutWide.astro";
 import { t } from "@util/translate";
 export async function getStaticPaths() {
   const posts = (await getCollection("project")).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );
   const count = posts.length;
   return posts.map((post, index) => {

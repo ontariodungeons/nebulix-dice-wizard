@@ -1,0 +1,403 @@
+---
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button, buttonVariants } from "@components/ui/button";
+---
+
+<div class="sm:align-center phb page p-10 sm:flex sm:flex-col">
+  <div class="relative flex self-center rounded-lg">
+    <button
+      type="button"
+      class="relative w-1/2 whitespace-nowrap rounded-md border-slate-50 bg-slate-50 py-2 text-sm font-medium text-slate-900 shadow-sm focus:outline-none sm:w-auto sm:px-8"
+      >Monthly billing
+    </button>
+    <button
+      type="button"
+      class="relative ml-0.5 w-1/2 whitespace-nowrap rounded-md border border-transparent py-2 text-sm font-medium text-slate-900 focus:outline-none sm:w-auto sm:px-8"
+      >Yearly billing
+    </button>
+  </div>
+  <div
+    class="page mt-12 space-y-3 sm:mt-16 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 md:mx-auto md:max-w-5xl xl:grid-cols-3"
+  >
+    <Card className="divide-y rounded-lg border shadow-sm">
+      <CardHeader className="p-6">
+        <CardTitle>New Beginnings (Level 1-5)</CardTitle>
+        <CardDescription>Available to all ages</CardDescription>
+        <h5>$20/game</h5>
+        <Button className={buttonVariants({ variant: "outline" })}>
+          Sign up new Recruits
+        </Button>
+      </CardHeader>
+      <CardDescription>
+        <h3>What's included</h3>
+        <ul class="@xl:column-3 flex-1 p-8 @lg:gap-8 @lg:pb-20 @2xl:columns-2">
+          <li class="flex items-start gap-2 py-1">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 100 100"
+              class="w-5 text-success"
+              data-icon="check"
+            >
+              <symbol id="ai:local:check"
+                ><path
+                  fill="currentColor"
+                  d="M88.04 30.319 75.124 17.401a2.42 2.42 0 0 0-3.419 0L37.392 51.714l-9.094-9.093a2.418 2.418 0 0 0-3.419 0L11.96 55.539a2.419 2.419 0 0 0 0 3.419L35.607 82.6a2.416 2.416 0 0 0 1.709.708c.029 0 .055-.016.083-.016.024 0 .05.014.075.014.621 0 1.236-.236 1.709-.708l48.857-48.86a2.416 2.416 0 0 0 0-3.419z"
+                ></path></symbol
+              ><use xlink:href="#ai:local:check"></use>
+            </svg> Start anytime <span class="ml-auto text-sm font-light">
+            </span>
+          </li><li class="flex items-start gap-2 py-1">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 100 100"
+              class="w-5 text-success"
+              data-icon="check"
+            >
+              <use xlink:href="#ai:local:check"></use>
+            </svg> Previous knowledge not required
+          </li><li class="flex items-start gap-2 py-1">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 100 100"
+              class="w-5 text-success"
+              data-icon="close-bold"
+            >
+              <symbol id="ai:local:close-bold"
+                ><path
+                  fill="currentColor"
+                  d="M84.707 68.752 65.951 49.998l18.75-18.752a1.989 1.989 0 0 0 0-2.813L71.566 15.295a1.99 1.99 0 0 0-2.814 0L49.999 34.047l-18.75-18.752c-.746-.747-2.067-.747-2.814 0L15.297 28.431a1.992 1.992 0 0 0 0 2.814L34.05 49.998 15.294 68.753a1.993 1.993 0 0 0 0 2.814L28.43 84.704a1.988 1.988 0 0 0 2.814 0l18.755-18.755 18.756 18.754c.389.388.896.583 1.407.583s1.019-.195 1.408-.583l13.138-13.137a1.99 1.99 0 0 0-.001-2.814z"
+                ></path></symbol
+              ><use xlink:href="#ai:local:close-bold"></use>
+            </svg> Cool Stickers <span class="ml-auto text-sm font-light">
+            </span>
+          </li><li class="flex items-start gap-2 py-1">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 100 100"
+              class="w-5 text-warning"
+              data-icon="close-bold"
+            >
+              <use xlink:href="#ai:local:close-bold"></use>
+            </svg> Parental consent required (under 18) <span
+              class="ml-auto text-sm font-light"
+            >
+            </span>
+          </li><li class="flex items-start gap-2 py-1">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 100 100"
+              class="w-5 text-danger"
+              data-icon="close-bold"
+            >
+              <use xlink:href="#ai:local:close-bold"></use>
+            </svg> Advanced Player Options <span
+              class="ml-auto text-sm font-light"
+            >
+            </span>
+          </li><li class="flex items-start gap-2 py-1">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 100 100"
+              class="w-5 text-danger"
+              data-icon="close-bold"
+            >
+              <use xlink:href="#ai:local:close-bold"></use>
+            </svg> Models and Maps <span class="ml-auto text-sm font-light">
+            </span>
+          </li><li class="flex items-start gap-2 py-1">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 100 100"
+              class="w-5 text-danger"
+              data-icon="close-bold"
+            >
+              <use xlink:href="#ai:local:close-bold"></use>
+            </svg> Access to Premium Content and Events <span
+              class="ml-auto text-sm font-light"
+            >
+            </span>
+          </li><li class="flex items-start gap-2 py-1">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 100 100"
+              class="w-5 text-danger"
+              data-icon="close-bold"
+            >
+              <use xlink:href="#ai:local:close-bold"></use>
+            </svg> Discounts for Dice Wizard Products <span
+              class="ml-auto text-sm font-light"
+            >
+            </span>
+          </li>
+        </ul>
+      </CardDescription>
+    </Card>
+    <Card className="divide-y rounded-lg border shadow-sm">
+      <CardHeader>
+        <CardTitle>Adventurers (Level 5-10)</CardTitle>
+
+        <CardDescription className="mt-2 text-base leading-tight ">
+          For creators with multiple ideas who want to efficiently test and
+          refine them.
+        </CardDescription>
+
+        <p class="mt-8">
+          <span class="text-4xl font-bold tracking-tighter text-slate-900"
+            >$8</span
+          >
+
+          <span class="text-base font-medium text-slate-500">/mo</span>
+        </p><a
+          href="/sign-up"
+          class="mt-8 block w-full rounded-md bg-slate-900 py-2 text-center text-sm font-semibold text-white"
+          >Join as an Aventurer</a
+        >
+      </CardHeader>
+    </Card>
+    <div class="px-6 pb-8 pt-6">
+      <h3 class="text-sm font-bold uppercase tracking-wide text-slate-900">
+        What's included
+      </h3>
+      <ul role="list" class="mt-4 space-y-3">
+        <li class="flex space-x-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 flex-shrink-0 text-green-400"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+          <span class="text-base text-slate-700">All Free features</span>
+        </li>
+        <li class="flex space-x-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 flex-shrink-0 text-green-400"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+          <span class="text-base text-slate-700">5 landing pages included</span>
+        </li>
+        <li class="flex space-x-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 flex-shrink-0 text-green-400"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+          <span class="text-base text-slate-700">50,000 visits/mo</span>
+        </li>
+        <li class="flex space-x-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 flex-shrink-0 text-green-400"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+          <span class="text-base text-slate-700"
+            >1,000 conversion actions included</span
+          >
+        </li>
+        <li class="flex space-x-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 flex-shrink-0 text-green-400"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+          <span class="text-base text-slate-700">1% payment commission</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="divide-y divide-slate-200 rounded-lg border border-slate-200 shadow-sm"
+  >
+    <div class="p-6">
+      <h2 class="text-xl font-bold leading-6 text-slate-900">Shipper</h2>
+      <p class="mt-2 text-base leading-tight text-slate-700">
+        For productive shippers who want to work more efficiently.
+      </p>
+      <p class="mt-8">
+        <span class="text-4xl font-bold tracking-tighter text-slate-900"
+          >$15</span
+        >
+
+        <span class="text-base font-medium text-slate-500">/mo</span>
+      </p><a
+        href="/sign-up"
+        class="mt-8 block w-full rounded-md bg-slate-900 py-2 text-center text-sm font-semibold text-white"
+        >Join as a Shipper</a
+      >
+    </div>
+    <div class="px-6 pb-8 pt-6">
+      <h3 class="text-sm font-bold uppercase tracking-wide text-slate-900">
+        What's included
+      </h3>
+      <ul role="list" class="mt-4 space-y-3">
+        <li class="flex space-x-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 flex-shrink-0 text-green-400"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+          <span class="text-base text-slate-700">All Standard features</span>
+        </li>
+        <li class="flex space-x-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 flex-shrink-0 text-green-400"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+          <span class="text-base text-slate-700">20 landing pages included</span
+          >
+        </li>
+        <li class="flex space-x-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 flex-shrink-0 text-green-400"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+          <span class="text-base text-slate-700">200,000 visits/mo</span>
+        </li>
+        <li class="flex space-x-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 flex-shrink-0 text-green-400"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+          <span class="text-base text-slate-700"
+            >5,000 conversion actions included</span
+          >
+        </li>
+        <li class="flex space-x-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 flex-shrink-0 text-green-400"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+          </svg>
+          <span class="text-base text-slate-700">No payment commission</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

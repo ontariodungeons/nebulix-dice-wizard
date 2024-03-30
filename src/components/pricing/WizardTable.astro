@@ -11,21 +11,14 @@ const id = title ? slugify(title) : "pricing";
   {id}
   class={`container-${
     style?.container || "xl"
-  } fade-up rounded-md grid gap-8 scroll-m-8 `}
+  } phb fade-up rounded-md grid gap-8 scroll-m-8`}
 >
-  {
-    title && (
-      <h1 class="fade-up text-center text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
-        {title}
-      </h1>
-    )
-  }
-
+  {title && <h1 class="title-sm fade-up"> {title}</h1>}
   {
     prices && prices.length > 0 && (
-      <div class="flex flex-wrap gap-8">
+      <div class="page flex flex-wrap gap-8">
         {prices.map((price) => (
-          <div class="surface-price note flex min-w-[290px] flex-1 grow overflow-hidden @container">
+          <div class="surface-price note flex min-w-[290px]  flex-1 grow overflow-hidden @container">
             <div class="price-grid grid w-full @xl:flex">
               <div
                 class={`relative h-fit @xl:h-full @xl:w-[16rem] @2xl:w-[31%] ${price.surface}`}
@@ -34,9 +27,6 @@ const id = title ? slugify(title) : "pricing";
                   <div class="flex-wrap items-end gap-2">
                     <span class="text-4xl font-bold tracking-tight md:text-5xl">
                       {price.price}
-                    </span>
-                    <span class="text-4xl font-bold tracking-tight md:text-5xl">
-                      {price.price_arc}
                     </span>
                     <span class="opacity-60">{price.price_suffix} </span>
                   </div>

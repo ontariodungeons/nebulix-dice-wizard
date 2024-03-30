@@ -67,6 +67,7 @@ const blocks = z
 				price_suffix: z.string().optional(),
 				surface: z.string().optional(),
 				price: z.string(),
+				price_arc: z.string().optional(),
 				buttons: z
 				.array(
 					z.object({
