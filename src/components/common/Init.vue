@@ -68,19 +68,28 @@ onMounted(() => {
     parallaxReveal.forEach((el) => {
       const img = el.querySelector(".parallax");
 
-      img.animate(
+      // If the element is exited, start the animation
+      const animation = img.animate(
         {
           transform: ["none", "translateY(30%)"],
         },
         {
           fill: "both",
+          // The animation will be played on the `el` element
           timeline: new ViewTimeline({ subject: el }),
+          // Start the animation when the element is 5% out of viewport
           rangeStart: { rangeName: "exit", offset: CSS.percent(5) },
+          // End the animation when the element is completely out of viewport
           rangeEnd: { rangeName: "exit", offset: CSS.percent(100) },
         },
       );
+      // Pause the animation when the element is entered
+      el.addEventListener("mouseenter", () => animation.pause());
+      // Resume the animation when the element is exited
+      el.addEventListener("mouseleave", () => animation.play());
     });
   }
+
 
   /* CONTACT FORM */
   const contactButtons = document.querySelectorAll("[href='#contact']");

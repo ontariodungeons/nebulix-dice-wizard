@@ -10,7 +10,7 @@ import PageLayoutWide from "@layouts/PageLayoutWide.astro";
 import { t } from "@util/translate";
 export async function getStaticPaths() {
   const posts = (await getCollection("project")).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );
   const count = posts.length;
   return posts.map((post, index) => {

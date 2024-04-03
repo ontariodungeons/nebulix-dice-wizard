@@ -1,0 +1,73 @@
+---
+import { slugify } from "@util/helpers";
+import { Icon } from "astro-icon/components";
+import Button from "@components/navigation/Button.astro";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { PriceComparisonTable } from "@components/price-comparison-table";
+const { title, prices, style } = Astro.props;
+const id = title ? slugify(title) : "pricing";
+---
+
+<div
+  {id}
+  class={`container-${
+    style?.container || "xl"
+  } fade-up rounded-md grid gap-8 scroll-m-8 `}
+>
+  {
+    title && (
+      <h1 class="fade-up text-center text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
+        {title}
+      </h1>
+    )
+  }
+
+  {
+    prices && prices.length > 0 && (
+      <div class="phb flex flex-wrap gap-8 dark:text-black">
+        {prices.map((price) => (
+          <Card className="page surface-price min-w-[290px] flex-1 grow overflow-hidden @container price-grid grid w-full @xl:flex">
+            <CardHeader className="block note text-center">
+              <CardTitle>{price.title}</CardTitle>
+              <CardDescription>
+                <h3>{price.price}/GAME</h3>or <h3>{price.price_arc}/ARC</h3>
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <h3 class="text-center opacity-60">{price.intro}</h3>
+              <ul class="@xl:column-3 flex-1 p-8 @lg:gap-8 @lg:pb-20 @2xl:columns-2">
+                {price.features.map((feature) => (
+                  <li class="flex items-start gap-2 py-1">
+                    {feature.icon && (
+                      <Icon
+                        name={feature.icon}
+                        class={`w-5 ${feature.icon_class}`}
+                      />
+                    )}
+
+                    {feature.label}
+                    <span class="ml-auto text-sm font-light">
+                      {feature.value}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+            <CardFooter>
+              {price?.buttons &&
+                price.buttons.map((btn) => <Button {...btn} />)}
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
+    )
+  }
+</div>
+<PriceComparisonTable />

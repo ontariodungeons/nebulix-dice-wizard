@@ -2,7 +2,7 @@
 import * as React from "react"
 import { type DropdownMenuTriggerProps } from "@radix-ui/react-dropdown-menu"
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
-import { type NpmCommands } from "@/types/unist"
+import { type NpmCommands } from "types/unist"
 
 import { type Event, trackEvent } from "@/lib/events"
 import { cn } from "@/lib/utils"

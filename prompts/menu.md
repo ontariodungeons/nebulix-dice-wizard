@@ -1,0 +1,7 @@
+- Games
+- Register
+- Learn
+- Loot
+- Events
+- Join
+- Contact

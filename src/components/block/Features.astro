@@ -9,7 +9,7 @@ const { content, container, features } = Astro.props;
 
 <Intersecting client:visible className="w-full">
   <div
-    class={`container-${container} fade-up rounded-md surface-white features grid gap-8`}
+    class={`container-${container} fade-up rounded-md features grid gap-8 surface-white`}
   >
     <div set:html={marked.parse(content)} class="richtext fade-up" />
 
@@ -29,7 +29,10 @@ const { content, container, features } = Astro.props;
                 >
                   {feature.link ? (
                     <a href={feature.link}>
-                      <Icon name={getIconName(feature.icon)} class={`h-8 w-8 `} />
+                      <Icon
+                        name={getIconName(feature.icon)}
+                        class={`h-8 w-8 `}
+                      />
                     </a>
                   ) : (
                     <Icon name={getIconName(feature.icon)} class={`h-8 w-8 `} />

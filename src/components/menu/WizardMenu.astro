@@ -1,0 +1,105 @@
+---
+import * as React from "react";
+import Link from "next/link";
+
+import { cn } from "@/lib/utils";
+import { Icons } from "@components/icons";
+import {
+  NavigationMenuLink,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenu,
+} from "@/components/ui/navigation-menu";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+---
+
+<nav class="bg-[#0d0d2b] bg-opacity-80">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <h1 class="text-3d animate-pulse text-xl font-bold text-white">
+            DICE WIZARD
+          </h1>
+        </div>
+        <div class="ml-auto mr-auto hidden md:block">
+          <NavigationMenu>
+            <NavigationMenuList
+              className="flex items-baseline justify-center space-x-4"
+            >
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className="rounded-md px-2 py-1 transition-colors duration-200 hover:bg-gray-700"
+                  href="#"
+                >
+                  Games
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className="rounded-md px-2 py-1 transition-colors duration-200 hover:bg-gray-700"
+                  href="#"
+                >
+                  Register
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className="rounded-md px-2 py-1 transition-colors duration-200 hover:bg-gray-700"
+                  href="#"
+                >
+                  Learn
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className="rounded-md px-2 py-1 transition-colors duration-200 hover:bg-gray-700"
+                  href="#"
+                >
+                  Loot
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className="rounded-md px-2 py-1 transition-colors duration-200 hover:bg-gray-700"
+                  href="#"
+                >
+                  Events
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className="rounded-md px-2 py-1 transition-colors duration-200 hover:bg-gray-700"
+                  href="#"
+                >
+                  Join
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  className="rounded-md px-2 py-1 transition-colors duration-200 hover:bg-gray-700"
+                  href="#"
+                >
+                  Contact
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-4 flex items-center md:ml-6">
+          <Switch className="ml-auto" id="dark-mode" />
+          <Label
+            className="ml-2 text-white text-opacity-70"
+            htmlFor="dark-mode"
+          >
+            Dark Mode
+          </Label>
+        </div>
+      </div>
+      <div class="-mr-2 flex md:hidden"></div>
+    </div>
+  </div>
+</nav>

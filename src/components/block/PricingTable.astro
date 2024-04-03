@@ -11,24 +11,29 @@ const id = title ? slugify(title) : "pricing";
   {id}
   class={`container-${
     style?.container || "xl"
-  } fade-up rounded-md features grid gap-8 scroll-m-8`}
+  } fade-up rounded-md grid gap-8 scroll-m-8 `}
 >
-  {title && <h1 class="title-sm fade-up"> {title}</h1>}
+  {
+    title && (
+      <h1 class="fade-up text-center text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
+        {title}
+      </h1>
+    )
+  }
+
   {
     prices && prices.length > 0 && (
       <div class="flex flex-wrap gap-8">
         {prices.map((price) => (
-          <div class="surface-price flex min-w-[290px] flex-1 grow  overflow-hidden rounded-md @container">
+          <div class="surface-price note flex min-w-[290px] flex-1 grow overflow-hidden @container">
             <div class="price-grid grid w-full @xl:flex">
               <div
                 class={`relative h-fit @xl:h-full @xl:w-[16rem] @2xl:w-[31%] ${price.surface}`}
               >
                 <div class=" flex-shrink-0 px-8 pb-14 pt-8 ">
                   <div class="flex-wrap items-end gap-2">
-                    <span class="text-4xl font-bold tracking-tight md:text-5xl">
-                      {price.price}
-                    </span>
-                    <span class="opacity-60">{price.price_suffix} </span>
+                    <span class="price-value">{price.price}</span>
+                    <span class="price-arc">{price.price_arc}</span>
                   </div>
 
                   <div class="">
@@ -69,24 +74,22 @@ const id = title ? slugify(title) : "pricing";
     )
   }
 </div>
-
-<style>
-  .price-grid {
-    grid-template-rows: min-content auto min-content;
+<style lang="postcss">
+  .price-container {
+    @apply text-center;
   }
 
-  .surface-price {
-    @apply bg-white text-dark dark:bg-black dark:text-light;
-    .shape-fill {
-      @apply fill-white dark:fill-black;
-    }
+  .price-value {
+    @apply text-4xl font-bold tracking-tight text-primary; /* primary color */
+    @apply md:text-5xl lg:text-6xl; /* responsive font sizes */
   }
-  .features {
-    &__item {
-      min-width: min(100vw - var(--spacing), 16rem);
-      @screen sm {
-        max-width: 22rem;
-      }
-    }
+
+  .price-arc {
+    @apply text-4xl font-bold tracking-tight text-secondary mt-2; /* secondary color */
+    @apply md:text-5xl lg:text-6xl; /* responsive font sizes */
+  }
+
+  .price-suffix {
+    @apply text-lg opacity-60; /* smaller font size and reduced opacity */
   }
 </style>

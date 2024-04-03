@@ -1,7 +1,7 @@
 
 import Link from "next/link"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
-import type { NavItem, NavItemWithChildren } from "@/types/nav"
+import type { NavItem, NavItemWithChildren } from "types/nav"
 import { docsConfig } from "@/config/docs"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/registry/new-york/ui/button"

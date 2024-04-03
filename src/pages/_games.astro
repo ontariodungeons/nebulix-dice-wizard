@@ -1,0 +1,49 @@
+---
+import { getEntry } from "astro:content";
+import { marked } from "marked";
+import { Picture } from "astro-imagetools/components";
+import Layout from "@layouts/PageLayoutWide.astro";
+import PriceTiers from "@components/price-tiers";
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+const { title, description, pageClass, thumbnail, og_image } = Astro.props;
+const navigation = await getEntry("config", "navigation");
+const about = await getEntry("config", "about");
+const contact = await getEntry("config", "contact");
+
+export const metadata = {
+  title: "Camp Designed for D&D and Table Top Games",
+  description: "Weekend escape to play hours of games, ",
+  intro: "Games are for kids too",
+  style: {
+    template: "split",
+    card_template: "grid",
+    hero_template: "image",
+    container: "md",
+    hero_surface: "surface-dark",
+    hero_image_opacity: "",
+  },
+  pubDate: "2023-09-03T12:14:12.256+02:00",
+  thumbnail: "/src/assets/nebulix-template.jpeg",
+};
+---
+
+<Layout>
+  <head>
+    <BaseHead
+      slot="head"
+      title={title}
+      description={description}
+      thumbnail={!!og_image ? og_image : thumbnail}
+    />
+  </head>
+
+  <Header
+    slot="header"
+    title={title}
+    menu={navigation.data.main_menu}
+    social={contact.data.social}
+    about={about.data}
+  />
+  <PriceTiers />
+</Layout>
