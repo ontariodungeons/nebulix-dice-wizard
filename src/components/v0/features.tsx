@@ -17,7 +17,7 @@ export default function Features() {
                 alt="Online Adventures"
                 className="rounded-t-md w-full object-cover"
                 height="200"
-                src="/placeholder.svg"
+                src="/icons/checkmark.svg"
                 style={{
                   aspectRatio: "300/200",
                   objectFit: "cover",
@@ -40,7 +40,7 @@ export default function Features() {
                 alt="Model Painting Workshop"
                 className="rounded-t-md w-full object-cover"
                 height="200"
-                src="/placeholder.svg"
+                src="/icons/checkmark.svg"
                 style={{
                   aspectRatio: "300/200",
                   objectFit: "cover",
@@ -63,7 +63,7 @@ export default function Features() {
                 alt="Beginner Games"
                 className="rounded-t-md w-full object-cover"
                 height="200"
-                src="/placeholder.svg"
+                src="/icons/checkmark.svg"
                 style={{
                   aspectRatio: "300/200",
                   objectFit: "cover",
@@ -86,7 +86,7 @@ export default function Features() {
                 alt="Advanced Games"
                 className="rounded-t-md w-full object-cover"
                 height="200"
-                src="/placeholder.svg"
+                src="/icons/checkmark.svg"
                 style={{
                   aspectRatio: "300/200",
                   objectFit: "cover",
@@ -109,7 +109,7 @@ export default function Features() {
                 alt="Dice Making Workshop"
                 className="rounded-t-md w-full object-cover"
                 height="200"
-                src="/placeholder.svg"
+                src="/icons/checkmark.svg"
                 style={{
                   aspectRatio: "300/200",
                   objectFit: "cover",
@@ -132,7 +132,7 @@ export default function Features() {
                 alt="Role Playing Games"
                 className="rounded-t-md w-full object-cover"
                 height="200"
-                src="/placeholder.svg"
+                src="/icons/checkmark.svg"
                 style={{
                   aspectRatio: "300/200",
                   objectFit: "cover",

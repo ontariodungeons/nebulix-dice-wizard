@@ -55,7 +55,7 @@ export default function GameList() {
               alt="Hero"
               className="mx-auto rounded-lg object-cover aspect-[3/1] overflow-hidden"
               height="400"
-              src="/placeholder.svg"
+              src="/icons/checkmark.svg"
               width="1200"
             />
           </div>

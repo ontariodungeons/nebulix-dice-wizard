@@ -64,7 +64,7 @@ export function BaseLayout() {
                 alt="Online Adventures"
                 className="rounded-t-md"
                 height="200"
-                src="/placeholder.svg"
+                src="/icons/checkmark.svg"
                 style={{
                   aspectRatio: "300/200",
                   objectFit: "cover",
@@ -81,7 +81,7 @@ export function BaseLayout() {
                 alt="Model Painting Workshop"
                 className="rounded-t-md"
                 height="200"
-                src="/placeholder.svg"
+                src="/icons/checkmark.svg"
                 style={{
                   aspectRatio: "300/200",
                   objectFit: "cover",
@@ -98,7 +98,7 @@ export function BaseLayout() {
                 alt="Beginner Games"
                 className="rounded-t-md"
                 height="200"
-                src="/placeholder.svg"
+                src="/icons/checkmark.svg"
                 style={{
                   aspectRatio: "300/200",
                   objectFit: "cover",
