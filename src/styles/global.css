@@ -41,8 +41,8 @@
     --w-sm: 40rem;
     --w-container: 55rem;
 
-    --popper-theme-background-color: theme(colors.primary.DEFAULT.DEFAULT);
-    --popper-theme-background-color-hover: theme(colors.primary.DEFAULT.DEFAULT);
+    --popper-theme-background-color: theme(colors.primary.DEFAULT);
+    --popper-theme-background-color-hover: theme(colors.primary.DEFAULT);
     --popper-theme-text-color: theme(colors.light);
     --popper-theme-border-width: 0px;
     --popper-theme-border-style: solid;
