@@ -44,13 +44,13 @@ Create a table that has user segments as the columns, and session features as th
 
 ## PRICES
 
-- SINGLE GAME (3 hours)
-  - Beginners (Levels 1-5): $15
-  - Adventurers (Levels 6-12): $20
-  - Heroes (Levels 1-20): $30
+- SINGLE GAME (3 hour game)
+  - Juniors: $15
+  - Adventurers: $20
+  - Heroes: $30
 
 - Session Arc (5 games in a row):
-  - Beginners: $70
+  - Juniors: $70
   - Adventurers: $90
   - Heroes: $120
 

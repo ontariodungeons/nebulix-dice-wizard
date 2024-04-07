@@ -67,11 +67,23 @@ const FormSchema = z.object({
     }),
 })
 
+/**
+ * Generates a registration form with fields for username, player name, bio, and sidebar items.
+ *
+ * @param {z.infer<typeof FormSchema>} data - The data submitted from the form.
+ * @return {void} This function does not return anything.
+ */
 export function RegistrationForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   })
 
+  /**
+   * A description of the entire function.
+   *
+   * @param {type} data - description of parameter
+   * @return {type} description of return value
+   */
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
       title: "You submitted the following values:",
