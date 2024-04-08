@@ -1,8 +1,4 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/M4F8QS2fPTq
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+import * as React from "react"
 import { Button } from "@/components/ui/button"
 
 export default function PriceTable() {
@@ -66,9 +62,9 @@ export default function PriceTable() {
         </table>
       </div>
       <div className="mt-8 text-center">
-        <Button asChild className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+        <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
           <a href="/signup">Sign Up</a>
-        </Button>
+        </button>
       </div>
     </div>
   )

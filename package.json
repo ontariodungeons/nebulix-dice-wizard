@@ -26,9 +26,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/db": "^0.9.4",
+    "@astrojs/db": "^0.10.1",
     "@astrojs/mdx": "^2.2.1",
     "@astrojs/node": "^8.2.5",
+    "@astrojs/preact": "^3.1.2",
     "@astrojs/react": "^3.1.0",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.1",

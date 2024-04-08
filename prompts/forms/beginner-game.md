@@ -6,15 +6,15 @@ Here is an AI prompt to generate code for a beginner game form based on the prov
 
 I need you to generate a React form component for a beginner game sign up page. The form should:
 
-- Create a responsive ticket sales form for "Dice Wizard Games" 
+- Create a responsive ticket sales form for "Dice Wizard Games"
+- Place text inside parentheses in a toolip when hovering over an icon
 - Surround the form with a modern 3d border
 - use RadixUI for form components where possible
 - make input and text grow larger when selected using animations and transitions
-- Place a unique iconify icon beside each field name that reveals "More Information coming soon"
 - Provide visual feedback when fields lose focus
 - Clearly seperate fields with a colourful border that changes as the form is filled
 - Use TailwindCSS to instead of inline styles
-- Use a colourful, but modern theme
+- Use a colourful, professional design that is creative and would win design awards.
 
 - Ensure consistent alignment between text and fields for wide, medium, and small display siazes
 
