@@ -14,6 +14,16 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+
+import { db, Player } from "astro:db";
+
+if (Astro.request.method === "POST") {
+  // parse form data
+  const formData = await Astro.request.formData();
+  const real_name = formData.get("real_name");
+  const player_name = formData.get("player_name");
+  const pronouns = formData.get("pronouns");
+}
 ---
 
 <div
@@ -29,7 +39,7 @@ import {
           Name *
           <Input
             className="transition-all focus:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-300"
-            id="name"
+            id="real_name"
             placeholder="Please enter your full name."
           />
         </label>
@@ -40,43 +50,49 @@ import {
 
           <Input
             className="transition-all focus:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-300"
-            id="username"
-            placeholder="Choose a unique username for your account."
+            id="player_name"
+            placeholder="What would be your character name in game"
           />
         </label>
       </div>
     </div>
     <div class="flex flex-col">
-      <label class="text-lg font-semibold"> Pronouns *</label>
-      <Input
-        className="transition-all focus:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-300"
-        id="pronouns"
-        placeholder="Your pronouns"
-      />
+      <label class="text-lg font-semibold">Pronouns *</label>
+      <RadioGroup id="pronouns" name="pronouns">
+        <div class="flex items-center space-x-2">
+          <RadioGroupItem value="She/Her" />
+          <Label htmlFor="pronouns-she">She/Her</Label>
+        </div>
+        <div class="flex items-center space-x-2">
+          <RadioGroupItem value="He/Him" />
+          <Label htmlFor="pronouns-he">He/Him</Label>
+        </div>
+        <div class="flex items-center space-x-2">
+          <RadioGroupItem value="They/Them" />
+          <Label htmlFor="pronouns-they">They/Them</Label>
+        </div>
+      </RadioGroup>
     </div>
     <div class="flex flex-col">
       <label class="text-lg font-semibold">Game Selection *</label>
       <RadioGroup defaultValue="junior">
-        <div class="flex flex-col space-y-2">
-          <div class="flex items-center space-x-2">
-            <RadioGroupItem id="junior" value="junior" />
-            <Label htmlFor="junior">
-              Junior (This is for the 8-12, and 13-17 games)
-            </Label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <RadioGroupItem id="adventurer" value="adventurer" />
-            <Label htmlFor="adventurer">
-              Adventurer (For all ages, tables grouped by preference and age)
-            </Label>
-          </div>
-          <div class="flex items-center space-x-2">
-            <RadioGroupItem id="heroes" value="heroes" />
-            <Label htmlFor="heroes">
-              Heroes (High level gameplay, expanded rules, backstories, and
-              more)
-            </Label>
-          </div>
+        <div class="flex items-center space-x-2">
+          <RadioGroupItem id="junior" value="junior" />
+          <Label htmlFor="junior">
+            Junior (This is for the 8-12, and 13-17 games)
+          </Label>
+        </div>
+        <div class="flex items-center space-x-2">
+          <RadioGroupItem id="adventurer" value="adventurer" />
+          <Label htmlFor="adventurer">
+            Adventurer (For all ages, tables grouped by preference and age)
+          </Label>
+        </div>
+        <div class="flex items-center space-x-2">
+          <RadioGroupItem id="heroes" value="heroes" />
+          <Label htmlFor="heroes">
+            Heroes (High level gameplay, expanded rules, backstories, and more)
+          </Label>
         </div>
       </RadioGroup>
     </div>

@@ -1,0 +1,141 @@
+---
+// Import the necessary modules from the astro:db package
+import {
+  db,
+  Player,
+  PlayerDays,
+  PlayerInterests,
+  DayName,
+  Interest,
+} from "astro:db";
+
+// Function to validate email
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+// Initialize an errors object to store potential validation messages
+let errors = {
+  real_name: "",
+  player_name: "",
+  email: "",
+  player_age: "",
+  pronouns: "",
+  days: "",
+  interests: "",
+};
+
+if (Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    const real_name = formData.get("real_name");
+    const player_name = formData.get("player_name");
+    const email = formData.get("email");
+    const player_age = formData.get("player_age");
+    const pronouns = formData.get("pronouns");
+    const selectedDays = formData.getAll("days");
+    const selectedInterests = formData.getAll("interests");
+
+    // Validate form data
+    if (!real_name) errors.real_name = "Real name is required.";
+    if (!player_name) errors.player_name = "Player name is required.";
+    if (!email || !isValidEmail(email))
+      errors.email = "A valid email is required.";
+    if (!player_age) errors.player_age = "Player age is required.";
+    if (!pronouns) errors.pronouns = "Pronouns are required.";
+    if (selectedDays.length === 0)
+      errors.days = "At least one day must be selected.";
+    if (selectedInterests.length === 0)
+      errors.interests = "At least one interest must be selected.";
+
+    const hasErrors = Object.values(errors).some((error) => error);
+
+    if (!hasErrors) {
+      // Insert the new player
+      const newPlayer = await db
+        .insert(Player)
+        .values({
+          real_name,
+          player_name,
+          email,
+          player_age,
+          pronouns,
+        })
+        .returning("id");
+
+      const playerId = newPlayer[0].id;
+
+      // Insert player days
+      await Promise.all(
+        selectedDays.map((day) =>
+          db.insert(PlayerDays).values({ player_id: playerId, day_id: day })
+        )
+      );
+
+      // Insert player interests
+      await Promise.all(
+        selectedInterests.map((interest) =>
+          db
+            .insert(PlayerInterests)
+            .values({ player_id: playerId, interest_id: interest })
+        )
+      );
+
+      // Redirect or show a success message
+      // return Astro.redirect('/success');
+    }
+  } catch (e) {
+    console.error(e);
+    // Handle the error appropriately
+  }
+}
+
+const days = await db.select().from(DayName);
+const interests = await db.select().from(Interest);
+---
+
+<form method="POST">
+  <input type="text" name="real_name" placeholder="Real Name" required />
+  <span>{errors.real_name}</span>
+
+  <input type="text" name="player_name" placeholder="Player Name" required />
+  <span>{errors.player_name}</span>
+
+  <input type="email" name="email" placeholder="Email" required />
+  <span>{errors.email}</span>
+
+  <input type="number" name="player_age" placeholder="Player Age" required />
+  <span>{errors.player_age}</span>
+
+  <input type="text" name="pronouns" placeholder="Pronouns" required />
+  <span>{errors.pronouns}</span>
+
+  <fieldset>
+    <legend>Days Available</legend>
+    {
+      days.map((day) => (
+        <label key={day.id}>
+          <input type="checkbox" name="days" value={day.id} />
+          {day.day_of_week}
+        </label>
+      ))
+    }
+  </fieldset>
+  <span>{errors.days}</span>
+
+  <fieldset>
+    <legend>Interests</legend>
+    {
+      interests.map((interest) => (
+        <label key={interest.id}>
+          <input type="checkbox" name="interests" value={interest.id} />
+          {interest.interest_name}
+        </label>
+      ))
+    }
+  </fieldset>
+  <span>{errors.interests}</span>
+
+  <button type="submit">Submit</button>
+</form>
