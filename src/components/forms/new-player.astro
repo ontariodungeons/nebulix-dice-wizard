@@ -52,39 +52,36 @@ if (Astro.request.method === "POST") {
     const hasErrors = Object.values(errors).some((error) => error);
 
     if (!hasErrors) {
-      // Insert the new player
-      const newPlayer = await db
-        .insert(Player)
-        .values({
-          real_name,
-          player_name,
-          email,
-          player_age,
-          pronouns,
-        })
-        .returning("id");
+      try {
+        // 1. Insert player data
+        const playerId = await db
+          .insert(Player)
+          .values(formData)
+          .returning("id");
 
-      const playerId = newPlayer[0].id;
+        // 2. Insert selected days
+        const playerDaysData = formData.availableDays.map((dayId) => ({
+          player_id: playerId,
+          day_id: dayId,
+        }));
+        await db.insert(PlayerDays).values(playerDaysData);
 
-      // Insert player days
-      await Promise.all(
-        selectedDays.map((day) =>
-          db.insert(PlayerDays).values({ player_id: playerId, day_id: day })
-        )
-      );
+        // 3. Insert selected interests
+        const playerInterestsData = formData.selectedInterests.map(
+          (interestId) => ({ player_id: playerId, interest_id: interestId })
+        );
+        await db.insert(PlayerInterests).values(playerInterestsData);
 
-      // Insert player interests
-      await Promise.all(
-        selectedInterests.map((interest) =>
-          db
-            .insert(PlayerInterests)
-            .values({ player_id: playerId, interest_id: interest })
-        )
-      );
-
-      // Redirect or show a success message
-      // return Astro.redirect('/success');
+        // Redirect to success page or display confirmation
+        Astro.redirect("/success"); // Replace with your desired action
+      } catch (error) {
+        console.error("Error inserting data:", error);
+        // Handle error (e.g., display error message)
+      }
     }
+
+    // Redirect or show a success message
+    // return Astro.redirect('/success');
   } catch (e) {
     console.error(e);
     // Handle the error appropriately
@@ -110,31 +107,31 @@ const interests = await db.select().from(Interest);
 
   <input type="text" name="pronouns" placeholder="Pronouns" required />
   <span>{errors.pronouns}</span>
+  {/* Available Days (multi-select) */}
+  <label for="availableDays">Available Days:</label>
+  <select
+    id="availableDays"
+    name="availableDays"
+    multiple
+    class="rounded border"
+  >
+    {days.map((day) => <option value={day.id}>{day.day_of_week}</option>)}
+  </select>
 
-  <fieldset>
-    <legend>Days Available</legend>
-    {
-      days.map((day) => (
-        <label key={day.id}>
-          <input type="checkbox" name="days" value={day.id} />
-          {day.day_of_week}
-        </label>
-      ))
-    }
-  </fieldset>
-  <span>{errors.days}</span>
-
-  <fieldset>
-    <legend>Interests</legend>
+  {/* Interests (multi-select) */}
+  <label for="selectedInterests">Interests:</label>
+  <select
+    id="selectedInterests"
+    name="selectedInterests"
+    multiple
+    class="rounded border"
+  >
     {
       interests.map((interest) => (
-        <label key={interest.id}>
-          <input type="checkbox" name="interests" value={interest.id} />
-          {interest.interest_name}
-        </label>
+        <option value={interest.id}>{interest.interest_name}</option>
       ))
     }
-  </fieldset>
+  </select>
   <span>{errors.interests}</span>
 
   <button type="submit">Submit</button>
