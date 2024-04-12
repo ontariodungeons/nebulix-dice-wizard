@@ -12,7 +12,7 @@ const { title, name, container, template, content, categories } = Astro.props;
 const { data } = await getEntry("config", "shop");
 
 const posts = (await getCollection("product")).sort(
-  (a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
+  (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
 );
 
 const allCategories = posts
@@ -28,19 +28,19 @@ let blockCategories;
 if (categories && categories.length > 0) {
   blockCategories = categories
     .map((cat) =>
-      productCategories.filter((category) => category.name === cat).pop(),
+      productCategories.filter((category) => category.name === cat).pop()
     )
     .filter((val) => !!val);
 } else {
   blockCategories = productCategories.filter((category) =>
-    allCategoriesFlat.includes(category.name),
+    allCategoriesFlat.includes(category.name)
   );
 }
 
 const sizes = getGridImageSizes(container);
 ---
 
-<Intersecting client:visible className="w-full">
+<Intersecting ssr client:visible className="w-full">
   <div class={`shop-items grid gap-8 fade-up container-${container || "md"} `}>
     {
       template === "grid" && (

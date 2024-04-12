@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const dedent = require('dedent-tabs').default;
+const dedent = require('dedent');
 
 const features = [
 	'Astrological Botany',   'Biochemical Sorcery',   'Civil Divination',

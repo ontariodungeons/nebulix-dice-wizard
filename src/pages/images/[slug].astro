@@ -7,8 +7,6 @@ import { Icon } from "astro-icon/components";
 import { t } from "@util/translate";
 import { getImageTransitionName } from "@util/helpers";
 import { Picture } from "astro-imagetools/components";
-import SnipCart from "@components/shop/SnipCartInit.vue";
-import CartButton from "@components/shop/CartButton.vue";
 
 const snipcartKey = import.meta.env.SNIPCART_KEY;
 
@@ -49,26 +47,6 @@ const title = toHeaderCase(slug);
     <BaseHead title={title} description={`${t("image")}: ${title}`} />
   </head>
   <body class="surface-dark relative grid h-screen w-full place-items-center">
-    {
-      snipcartKey && (
-        <div class="-z-50 hidden">
-          <CartButton
-            label={t("cart")}
-            client:idle
-            transition:persist
-            transition:name="cart"
-          >
-            <Icon name="shopping-cart" class="h-6 w-6" />
-          </CartButton>
-          <SnipCart
-            transition:persist
-            transition:name="snipcart-base"
-            snipcartKey={snipcartKey}
-            client:idle
-          />
-        </div>
-      )
-    }
     <ImageNav
       client:idle
       translations={{ next: t("next"), prev: t("prev"), close: t("close") }}

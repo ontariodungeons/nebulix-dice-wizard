@@ -49,7 +49,7 @@ const columnClass = () => {
 const animation = `image_${animate ? imageName : Math.random()}`;
 ---
 
-<Intersecting client:visible className="w-full">
+<Intersecting ssr client:visible className="w-full">
   <div
     class={`container-${container} ${columnClass()} text-image gap-8 text-image__${template} ${
       reverse ? "reverse" : "normal"
@@ -68,7 +68,7 @@ const animation = `image_${animate ? imageName : Math.random()}`;
                 data-animation={animation}
               >
                 <div
-                  class={`transition-transform duration-1000 ease-in hover:scale-105 hover:duration-[1s]`}
+                  class={`hover:duration-[1s] transition-transform duration-1000 ease-in hover:scale-105`}
                 >
                   <Picture
                     src={thumbnail}

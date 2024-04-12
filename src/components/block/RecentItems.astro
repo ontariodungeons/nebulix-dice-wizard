@@ -25,34 +25,34 @@ let posts;
 if (page_type === "blog") {
   base_url = import.meta.env.BLOG_SLUG;
   posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
   );
 
   if (post_tag && post_tag.length > 0)
     posts = posts.filter(
       (post) =>
         post.data?.tag &&
-        post_tag.some((t) => post.data?.tag && post.data.tag.includes(t)),
+        post_tag.some((t) => post.data?.tag && post.data.tag.includes(t))
     );
 }
 
 if (page_type === "menu") {
   base_url = import.meta.env.MENU_SLUG;
   posts = (await getCollection("menu")).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );
 }
 
 if (page_type === "project") {
   base_url = import.meta.env.PORTFOLIO_SLUG;
   posts = (await getCollection("project")).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );
   if (portfolio_tag && portfolio_tag.length > 0)
     posts = posts.filter(
       (post) =>
         post.data?.tag &&
-        portfolio_tag.some((t) => post.data?.tag && post.data.tag.includes(t)),
+        portfolio_tag.some((t) => post.data?.tag && post.data.tag.includes(t))
     );
 }
 
@@ -61,7 +61,7 @@ if (count && count > 0) posts = posts.slice(0, count);
 const sizes = getGridImageSizes(container);
 ---
 
-<Intersecting client:visible className="w-full">
+<Intersecting ssr client:visible className="w-full">
   <div
     class={`recent-blogs grid gap-8 fade-up container-${container || "md"} `}
   >

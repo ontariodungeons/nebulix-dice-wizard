@@ -22,9 +22,7 @@ const { slug } = Astro.params;
 ---
 
 <div
-  class={`hero relative overflow-hidden nebulix-parallax ${
-    style.hero_surface || "surface-dark"
-  } ${style.hero_class || ""}`}
+  class="hero nebulix-parallax surface-dark relative overflow-hidden"
   transition:name={`hero_${slug || Math.random()}`}
   id="header"
 >

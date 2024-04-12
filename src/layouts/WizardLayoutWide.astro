@@ -1,6 +1,5 @@
 ---
 import WizardBaseLayout from "@layouts/WizardBaseLayout.astro";
-import { WizardMenu } from "@components/wizard-menu";
 import Block from "@components/block/Block.astro";
 import BaseLayout from "@layouts/WizardBaseLayout.astro";
 import HeroImage from "@components/hero/HeroImage.astro";
@@ -11,8 +10,6 @@ const { title, description, style, thumbnail, og_image } = Astro.props;
 ---
 
 <WizardBaseLayout {title} {description} {thumbnail} {og_image}>
-  <WizardMenu />
-
   <div class="container relative z-10 w-full" id="more">
     <slot />
   </div>

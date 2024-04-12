@@ -28,7 +28,7 @@ if (container === "sm")
   sizes = "(min-width: 640px) calc(55rem / 3 - 0.66rem), calc(50vw - 2.5rem)";
 ---
 
-<Intersecting className="w-full" client:visible>
+<Intersecting noSsr className="w-full" client:visible>
   <div class={`container-${container} gap-8 grid`}>
     <h2 class="title-sm fade-in">{title}</h2>
     <div class={`image-grid-${container}`}>
@@ -40,10 +40,10 @@ if (container === "sm")
             style={`--animation-delay: ${(index + 1) * 150}ms`}
             class="fade-up  group relative overflow-hidden rounded-md"
             href={`${getImageUrl(
-              image.image,
+              image.image
             )}?index=${index}&gallery=${gallery.join(",")}`}
           >
-            <div class="transition-transform duration-1000 ease-in group-hover:scale-110 group-hover:duration-[2s]">
+            <div class="group-hover:duration-[2s] transition-transform duration-1000 ease-in group-hover:scale-110">
               <Picture
                 src={image.image}
                 aspect={aspect}

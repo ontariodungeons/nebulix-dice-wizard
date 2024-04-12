@@ -6,7 +6,7 @@ import { getIconName } from "@util/helpers";
 const { content, container, features } = Astro.props;
 ---
 
-<Intersecting client:visible className="w-full">
+<Intersecting ssr noSsr={true} client:visible className="w-full">
   <div
     class={`container-${container} fade-up rounded-md surface-white features grid gap-8`}
   >

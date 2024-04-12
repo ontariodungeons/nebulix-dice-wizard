@@ -1,8 +1,11 @@
 # Base Prompt
 
+This is a training prompt. By manually confirming the accuracy of the responses the AI will perform much better. The final step should be to convert this to a file that can automate the process in a single file.
+
+
 ## Prequisite Review
 
-The project is already configured and running, review astro.config.mjs, tailwindcss.config.js, tsconfig.json, postcss.config.js, package.json. Summarize the technical aspects of the project.
+The project is already configured and running, review astro.config.mjs, tailwindcss.config.js, tsconfig.json, postcss.config.js, package.json. Summarize the technical aspects of the project. We do not need the code for the configurations, unless they are new
 
 ## Astro Form Structure
 

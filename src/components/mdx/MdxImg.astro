@@ -28,7 +28,7 @@ export const prerender = true;
 
 {
   !isSvg && (
-    <Intersecting client:visible>
+    <Intersecting noSsr={true} client:visible>
       <a
         href={`/images/${imgAlt}`}
         class="img fade-up block"

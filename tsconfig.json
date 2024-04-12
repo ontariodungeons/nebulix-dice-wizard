@@ -21,7 +21,6 @@
       "@assets/*": ["src/assets/*"],
       "@locales/*": ["src/locales/*"],
       "@/app/*": ["src/pages/*"],
-      "@/registry/*": ["registry/*"],
       "@/hooks/*": ["hooks/*"],
       "@/config/*": ["src/config/*"],
       "@/types/*": ["types/*"],

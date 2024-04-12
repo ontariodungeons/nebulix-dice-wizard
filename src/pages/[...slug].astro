@@ -18,26 +18,10 @@ export async function getStaticPaths() {
 
 type Props = CollectionEntry<"page">;
 const post = Astro.props;
-const { Content } = await post.render();
 ---
 
-{
-  // Render a full-width page layout
-  post.data.style.template === "full" && (
-    <PageLayoutWide {...post.data}>
-      <div class="richtext">
-        <Content />
-      </div>
-    </PageLayoutWide>
-  )
-}
-{
-  // Render a split-width page layout
-  post.data.style.template === "split" && (
-    <PageLayoutSplit {...post.data}>
-      <div class="richtext">
-        <Content />
-      </div>
-    </PageLayoutSplit>
-  )
-}
+<PageLayoutWide {...post.data}>
+  <div class="richtext">
+    <slot />
+  </div>
+</PageLayoutWide>

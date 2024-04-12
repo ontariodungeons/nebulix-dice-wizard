@@ -1,17 +1,14 @@
 ---
 import { getEntry } from "astro:content";
-import { marked } from "marked";
 import { Picture } from "astro-imagetools/components";
-import BaseHead from "./../components/BaseHead.astro";
+import BaseHead from "@components/BaseHead.astro";
 import Header from "./../components/Header.astro";
 import Footer from "./../components/Footer.astro";
 import Init from "./../components/common/Init.vue";
-import SnipCart from "./../components/shop/SnipCartInit.vue";
 import ContactDialog from "./../components/common/ContactDialog.vue";
 import { Icon } from "astro-icon/components";
 import { t } from "./../util/translate";
-import "@fontsource-variable/inter-tight";
-import "@fontsource-variable/inter-tight/wght-italic.css";
+import { marked } from "marked";
 
 const lang = import.meta.env.WEBSITE_LANGUAGE;
 const currency = import.meta.env.CURRENCY;
@@ -32,16 +29,6 @@ const contact = await getEntry("config", "contact");
     />
   </head>
   <body class={`surface-base ${pageClass || ""}`}>
-    {
-      snipcartKey && (
-        <SnipCart
-          transition:persist
-          transition:name="snipcart-base"
-          snipcartKey={snipcartKey}
-          client:idle
-        />
-      )
-    }
     <Header
       title={title}
       menu={navigation.data.main_menu}
@@ -67,41 +54,43 @@ const contact = await getEntry("config", "contact");
     </Footer>
     <Init client:idle />
 
-    <ContactDialog client:idle contact={contact.data.form}>
-      {
-        contact?.data?.form?.intro && (
-          <div
-            set:html={marked.parse(contact.data.form.intro)}
-            slot="content"
+    {
+      contact.data.form && (
+        <ContactDialog client:idle contact={contact.data.form}>
+          {contact.data.form.intro && (
+            <div
+              set:html={marked.parse(contact.data.form.intro)}
+              slot="content"
+            />
+          )}
+          <Picture
+            slot="image"
+            src={contact.data.form.thumbnail}
+            alt={`contact`}
+            sizes="50vw"
+            aspect={4 / 5}
+            format={["webp"]}
+            fit="cover"
+            layout="fill"
+            placeholder="blurred"
+            position="attention"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 40vw"
+            breakpoints={[420, 725, 960]}
+            artDirectives={[
+              {
+                media: "(max-width: 768px)",
+                ar: 21 / 9,
+                src: contact.data.form.thumbnail,
+                layout: "constrained",
+                breakpoints: [500, 601, 768, 820, 962, 1280, 1440, 1536, 1920],
+              },
+            ]}
           />
-        )
-      }
-      <Picture
-        slot="image"
-        src={contact.data.form.thumbnail}
-        alt={`contact`}
-        sizes="50vw"
-        aspect={4 / 5}
-        format={["webp"]}
-        fit="cover"
-        layout="fill"
-        placeholder="blurred"
-        position="attention"
-        loading="lazy"
-        sizes="(max-width: 768px) 100vw, 40vw"
-        breakpoints={[420, 725, 960]}
-        artDirectives={[
-          {
-            media: "(max-width: 768px)",
-            ar: 21 / 9,
-            src: contact.data.form.thumbnail,
-            layout: "constrained",
-            breakpoints: [500, 601, 768, 820, 962, 1280, 1440, 1536, 1920],
-          },
-        ]}
-      />
-      <Icon name="close" class="w-6" />
-    </ContactDialog>
+          <Icon name="close" class="w-6" />
+        </ContactDialog>
+      )
+    }
 
     <script>
       const html = document.getElementsByTagName("html")[0];

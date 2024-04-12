@@ -8,12 +8,14 @@ import tailwind from "@astrojs/tailwind";
 import rehypeExternalLinks from "rehype-external-links";
 import fauxRemarkEmbedder from "@remark-embedder/core";
 import fauxOembedTransformer from "@remark-embedder/transformer-oembed";
+import react from '@astrojs/react';
 const remarkEmbedder = fauxRemarkEmbedder.default;
 const oembedTransformer = fauxOembedTransformer.default;
 import vue from "@astrojs/vue";
 /** @type {import('astro-m2dx').Options} */
-import react from "@astrojs/react";
 import db from "@astrojs/db";
+import playformCompress from "@playform/compress";
+import vercel from "@astrojs/vercel/serverless";
 const m2dxOptions = {
   exportComponents: true,
   unwrapImages: true,
@@ -23,10 +25,10 @@ const m2dxOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ontariodungeons.com",
-  integrations: [react(), icon(), mdx({}), sitemap(), tailwind(), vue({
+  site: "https://nebulix.unfolding.io",
+  integrations: [icon(), mdx({}), sitemap(), tailwind(), react(), vue({
     appEntrypoint: "/src/pages/_app"
-  }), astroImageTools, db()],
+  }), astroImageTools, db(), playformCompress()],
   markdown: {
     extendDefaultPlugins: true,
     remarkPlugins: [[remarkEmbedder, {
@@ -51,5 +53,7 @@ export default defineConfig({
   scopedStyleStrategy: "attribute",
   prefetch: {
     defaultStrategy: "viewport"
-  }
+  },
+  output: "server",
+  adapter: vercel()
 });

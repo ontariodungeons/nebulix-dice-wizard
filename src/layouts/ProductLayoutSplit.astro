@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import { Picture } from "astro-imagetools/components";
-import ProductVariationImageWrap from "@components/shop/ProductVariationImageWrap.vue";
 import Block from "@components/block/Block.astro";
 import { getImageUrl, getImageTransitionName } from "@util/helpers";
 import { t } from "@util/translate";
@@ -67,28 +66,7 @@ const hasBlocks = blocks && blocks.length > 0;
         }
         {
           variation_images &&
-            variation_images.map((image, index) => (
-              <ProductVariationImageWrap client:idle id={image.id}>
-                <Picture
-                  attributes={{
-                    picture: {
-                      class:
-                        "sm:h-screen z-0 surface-base h-full after:bg-no-repeat",
-                    },
-                  }}
-                  src={image.thumbnail}
-                  sizes="(max-width: 767px) 100vw, 100vh"
-                  width={1920}
-                  height={1920}
-                  ar={1}
-                  position="attention"
-                  loading="eager"
-                  alt={image.label || "title"}
-                  layout={isPng(image.thumbnail) ? "fill" : "fill"}
-                  objectFit={isPng(image.thumbnail) ? "contain" : "cover"}
-                />
-              </ProductVariationImageWrap>
-            ))
+            variation_images.map((image, index) => <span>Placeholder</span>)
         }
       </div>
 

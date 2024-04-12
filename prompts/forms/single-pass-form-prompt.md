@@ -126,12 +126,17 @@ if (Astro.request.method === "POST") {
 
 ```ts
 export const Player = defineTable({
-    columns: {id: column.number({ primaryKey: true }),
-    email: column.text({ unique: true }),real_name: column.text(),player_name: column.text(),
-    player_age: column.number(),child_name: column.text({ optional: true }),pronouns: column.text(),
-    expanded_interests: column.text({optional: true}),
-    questions: column.text({optional: true })
-    }, 
+ columns: {
+  id: column.number({ primaryKey: true }),
+  email: column.text({ unique: true }),
+  real_name: column.text(),
+  player_name: column.text(),
+  player_age: column.number(),
+  child_name: column.text({ optional: true }),
+  pronouns: column.text(),
+expanded_interests: column.text({optional: true}),
+  questions: column.text({optional: true })
+ }, 
 });
 
 export const PlayerDays = defineTable({

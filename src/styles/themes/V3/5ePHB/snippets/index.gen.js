@@ -1,4 +1,4 @@
-const dedent = require('dedent-tabs').default;
+const dedent = require('dedent');
 
 module.exports = ()=>{
 	return dedent`
