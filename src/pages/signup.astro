@@ -1,13 +1,32 @@
 ---
 import WizardHead from "@components/WizardHead.astro";
+import WizardMenu from "@components/menu/WizardMenu.astro";
 import NewPlayer from "@components/forms/new-player.astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to dice wizard games</title>
+
     <WizardHead title="About" description="About" />
-    <NewPlayer />
   </head>
-  <body> </body>
+
+  <body>
+    <div class="container mx-auto">
+      <header class="site-header bg-blue-500 p-4 text-white">
+        <WizardMenu />
+      </header>
+
+      <main class="p-4">
+        <NewPlayer />
+      </main>
+
+      <footer class="site-footer bg-gray-200 p-4 text-gray-700">
+        <p>This is the footer.</p>
+      </footer>
+    </div>
+  </body>
 </html>

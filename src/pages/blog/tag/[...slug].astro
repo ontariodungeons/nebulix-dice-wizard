@@ -2,7 +2,6 @@
 /* BLOG ARCHIVE PAGES BY TAG */
 import { getEntry } from "astro:content";
 import { getCollection } from "astro:content";
-import PageLayoutArchive from "@layouts/PageLayoutArchive.astro";
 import { getPagination, getCategoryData } from "@util/helpers";
 
 export async function getStaticPaths({ paginate }) {
@@ -32,16 +31,3 @@ data = {
   ...pageData,
 };
 ---
-
-<PageLayoutArchive
-  page={{
-    data: page,
-    lastPage: lastPage,
-    currentPage: currentPage,
-  }}
-  {filter_type}
-  {filters}
-  {filter}
-  {data}
-  {base_url}
-/>

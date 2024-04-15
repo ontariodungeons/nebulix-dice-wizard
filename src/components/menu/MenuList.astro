@@ -33,12 +33,7 @@ const { categories } = Astro.props;
         <ul class="auto-grid-lg menu-grid my-8 gap-10">
           {cat.menu_items.map((item) => (
             <li>
-              <Intersecting
-                ssr
-                noSsr={true}
-                client:visible
-                className="flex h-full"
-              >
+              <Intersecting noSsr={true} client:visible className="flex h-full">
                 <div class="fade-up flex h-full scroll-m-0 flex-col ">
                   {item.thumbnail && (
                     <a

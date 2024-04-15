@@ -1,16 +1,183 @@
 ---
-import WizardBaseLayout from "@layouts/WizardBaseLayout.astro";
-import Block from "@components/block/Block.astro";
-import BaseLayout from "@layouts/WizardBaseLayout.astro";
-import HeroImage from "@components/hero/HeroImage.astro";
-import HeroPlain from "@components/hero/HeroPlain.astro";
+import { getEntry } from "astro:content";
+import { Picture } from "astro-imagetools/components";
+import BaseHead from "@components/BaseHead.astro";
+import Header from "./../components/Header.astro";
+import Footer from "./../components/Footer.astro";
+import Init from "./../components/common/Init.vue";
+import ContactDialog from "./../components/common/ContactDialog.vue";
+import { Icon } from "astro-icon/components";
+import { t } from "./../util/translate";
+import { marked } from "marked";
+import { ViewTransitions } from "astro:transitions";
+import { Image } from "astro:assets";
+import "../styles/wizard-main.less";
+
+const { data } = await getEntry("config", "about");
+
+const lang = import.meta.env.WEBSITE_LANGUAGE;
+const currency = import.meta.env.CURRENCY;
+const snipcartKey = import.meta.env.SNIPCART_KEY;
+const { title, description, pageClass, thumbnail, og_image } = Astro.props;
+const navigation = await getEntry("config", "navigation");
+const about = await getEntry("config", "about");
+const contact = await getEntry("config", "contact");
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const pageTitle = `${title} | ${data.sitename}`;
 
 const props = Astro.props;
-const { title, description, style, thumbnail, og_image } = Astro.props;
+const contentClass = "plain" ? "py-0" : "py-20";
 ---
 
-<WizardBaseLayout {title} {description} {thumbnail} {og_image}>
-  <div class="container relative z-10 w-full" id="more">
-    <slot />
-  </div>
-</WizardBaseLayout>
+<!doctype html>
+<html lang={lang} data-currency={currency}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <style lang="less"></style>
+    <!-- Canonical URL -->
+    <link rel="canonical" data-pagefind-meta="url[href]" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>Dice Wizard Games</title>
+    <meta name="title" content="Dice Wizard Games" />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <script is:inline>
+      const setDarkMode = () => {
+        if (localStorage.getItem("color-scheme") === "dark") {
+          document.querySelector("html").dataset.theme = "dark";
+        }
+        if (localStorage.getItem("color-scheme") === "light") {
+          document.querySelector("html").dataset.theme = "light";
+        }
+        if (!localStorage.getItem("color-scheme")) {
+          let theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+          localStorage.setItem("color-scheme", theme);
+          document.querySelector("html").dataset.theme = theme;
+        }
+      };
+      setDarkMode();
+      document.addEventListener("astro:after-swap", setDarkMode);
+    </script>
+
+    <ViewTransitions fallback="swap" />
+    <script src="/scroll-timeline.js" is:inline defer></script>
+    <style lang="less"></style>
+  </head>
+  <body class={`surface-base ${pageClass || ""}`}>
+    <Header
+      title={title}
+      menu={navigation.data.main_menu}
+      social={contact.data.social}
+      about={about.data}
+    />
+    <main>
+      <slot name="hero" />
+
+      <div class="relative z-10 w-full" id="more">
+        <div class="page__content container-md contentClass">
+          <slot />
+          <slot name="nav" />
+        </div>
+        <div class="pointer-events-none fixed bottom-0 z-40 w-full">
+          <slot name="cart" />
+        </div>
+      </div>
+    </main>
+    <Footer>
+      <slot name="footer" />
+      <div class="pointer-events-none fixed bottom-0 right-0 z-50 w-full">
+        <div class="container-xl flex justify-end pb-4">
+          <a
+            href="#top"
+            aria-label={t("back_to_top")}
+            class="btn btn-icon surface-primary btn-to-top pointer-events-auto opacity-0"
+          >
+            <Icon name="up" class="w-6" /></a
+          >
+        </div>
+      </div>
+    </Footer>
+    <Init client:idle />
+
+    {
+      contact.data.form && (
+        <ContactDialog client:idle contact={contact.data.form}>
+          {contact.data.form.intro && (
+            <div
+              set:html={marked.parse(contact.data.form.intro)}
+              slot="content"
+            />
+          )}
+          <Picture
+            slot="image"
+            src={contact.data.form.thumbnail}
+            alt={`contact`}
+            sizes="50vw"
+            aspect={4 / 5}
+            format={["webp"]}
+            fit="cover"
+            layout="fill"
+            placeholder="blurred"
+            position="attention"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 40vw"
+            breakpoints={[420, 725, 960]}
+            artDirectives={[
+              {
+                media: "(max-width: 768px)",
+                ar: 21 / 9,
+                src: contact.data.form.thumbnail,
+                layout: "constrained",
+                breakpoints: [500, 601, 768, 820, 962, 1280, 1440, 1536, 1920],
+              },
+            ]}
+          />
+          <Icon name="close" class="w-6" />
+        </ContactDialog>
+      )
+    }
+
+    <script>
+      const html = document.getElementsByTagName("html")[0];
+      const SmoothScroll = () => {
+        html.style["scroll-behavior"] = "auto";
+      };
+      SmoothScroll();
+      document.addEventListener("astro:beforeload", SmoothScroll);
+    </script>
+    <style is:global>
+      .page__content {
+        &:empty {
+          display: none;
+        }
+        &:has(> .richtext:empty) {
+          display: none;
+        }
+        .img,
+        iframe {
+          width: calc(100% + var(--container-spacing));
+          margin-left: calc(var(--spacing) * -1);
+          @apply my-10 aspect-video h-auto;
+          @screen md {
+            width: 100%;
+            margin-left: 0;
+          }
+        }
+      }
+    </style>
+  </body><!-- Page Layout Wide -->
+</html>

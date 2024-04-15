@@ -1,0 +1,125 @@
+---
+import WizardHead from "@components/WizardHead.astro";
+import { HeroHeader } from "@components/hero-header";
+import Features from "@components/Features.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character Sheet</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+      .section {
+        margin-bottom: 10px;
+      }
+      .section-title {
+        font-size: 20px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+      }
+      .attribute-list,
+      .skill-list,
+      .equipment-list {
+        list-style-type: none;
+        padding: 0;
+      }
+      .attribute-list li,
+      .skill-list li,
+      .equipment-list li {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section">
+        <div class="section-title">Character Information</div>
+        <p>
+          <strong>Name:</strong>
+          <span contenteditable="true">[Character Name]</span>
+        </p>
+        <p><strong>Race:</strong> <span contenteditable="true">[Race]</span></p>
+        <p>
+          <strong>Class:</strong>
+          <span contenteditable="true">[Class]</span>
+        </p>
+        <p>
+          <strong>Background:</strong>
+          <span contenteditable="true">[Background]</span>
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Attributes</div>
+        <ul class="attribute-list">
+          <li>
+            <strong>Strength:</strong>
+            <span contenteditable="true">[Value]</span>
+          </li>
+          <li>
+            <strong>Dexterity:</strong>
+            <span contenteditable="true">[Value]</span>
+          </li>
+          <li>
+            <strong>Constitution:</strong>
+            <span contenteditable="true">[Value]</span>
+          </li>
+          <li>
+            <strong>Intelligence:</strong>
+            <span contenteditable="true">[Value]</span>
+          </li>
+          <li>
+            <strong>Wisdom:</strong>
+            <span contenteditable="true">[Value]</span>
+          </li>
+          <li>
+            <strong>Charisma:</strong>
+            <span contenteditable="true">[Value]</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Skills</div>
+        <ul class="skill-list">
+          <li>
+            <strong>Acrobatics:</strong>
+            <span contenteditable="true">[Value]</span>
+          </li>
+          <li>
+            <strong>Animal Handling:</strong>
+            <span contenteditable="true">[Value]</span>
+          </li>
+          <!-- Add more skills as needed -->
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Equipment</div>
+        <ul class="equipment-list">
+          <li>
+            <strong>Weapon:</strong>
+            <span contenteditable="true">[Weapon Name]</span>
+          </li>
+          <li>
+            <strong>Armor:</strong>
+            <span contenteditable="true">[Armor Name]</span>
+          </li>
+          <!-- Add more equipment as needed -->
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
