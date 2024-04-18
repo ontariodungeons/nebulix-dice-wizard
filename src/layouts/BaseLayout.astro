@@ -1,6 +1,5 @@
 ---
 import { getEntry } from "astro:content";
-import { Picture } from "astro-imagetools/components";
 import BaseHead from "@components/BaseHead.astro";
 import Header from "./../components/Header.astro";
 import Footer from "./../components/Footer.astro";
@@ -29,12 +28,7 @@ const contact = await getEntry("config", "contact");
     />
   </head>
   <body class={`surface-base ${pageClass || ""}`}>
-    <Header
-      title={title}
-      menu={navigation.data.main_menu}
-      social={contact.data.social}
-      about={about.data}
-    />
+    <Header title={title} menu={navigation.data.main_menu} about={about.data} />
     <main>
       <slot />
     </main>
@@ -54,43 +48,7 @@ const contact = await getEntry("config", "contact");
     </Footer>
     <Init client:idle />
 
-    {
-      contact.data.form && (
-        <ContactDialog client:idle contact={contact.data.form}>
-          {contact.data.form.intro && (
-            <div
-              set:html={marked.parse(contact.data.form.intro)}
-              slot="content"
-            />
-          )}
-          <Picture
-            slot="image"
-            src={contact.data.form.thumbnail}
-            alt={`contact`}
-            sizes="50vw"
-            aspect={4 / 5}
-            format={["webp"]}
-            fit="cover"
-            layout="fill"
-            placeholder="blurred"
-            position="attention"
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, 40vw"
-            breakpoints={[420, 725, 960]}
-            artDirectives={[
-              {
-                media: "(max-width: 768px)",
-                ar: 21 / 9,
-                src: contact.data.form.thumbnail,
-                layout: "constrained",
-                breakpoints: [500, 601, 768, 820, 962, 1280, 1440, 1536, 1920],
-              },
-            ]}
-          />
-          <Icon name="close" class="w-6" />
-        </ContactDialog>
-      )
-    }
+    <!-- Add a contact form here  -->
 
     <script>
       const html = document.getElementsByTagName("html")[0];

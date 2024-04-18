@@ -1,7 +1,7 @@
 ---
 import FormattedDate from "../FormattedDate.astro";
 import ItemFilter from "../navigation/ItemFilter.astro";
-import { Picture } from "astro-imagetools/components";
+import { Picture } from "astro:assets";
 
 const { content, base_url, animate } = Astro.props;
 
@@ -20,18 +20,11 @@ const animation = `hero_${animate ? content.slug : Math.random()}`;
           transition:name={`${animation}`}
         >
           <Picture
-            attributes={{
-              picture: {
-                class: "z-0 w-40 fade-in ",
-              },
-            }}
-            position="attention"
+            class= "z-0 w-40 fade-in ",
             src={content.data.thumbnail}
             width={200}
             height={200}
-            ar={1}
             alt={content.data.title}
-            layout="fullWidth"
           />
         </div>
       )

@@ -82,6 +82,6 @@ export default defineDb({
         Interest,
         PlayerDays,
         PlayerInterests,
-        UserProfileTable
+        UserProfileTable,
 	},
 });

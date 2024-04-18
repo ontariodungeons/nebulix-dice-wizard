@@ -2,6 +2,7 @@
 import WizardHead from "@components/WizardHead.astro";
 import PriceTiers from "@components/price-tiers";
 import PriceTable from "@components/price-table";
+import PageLayoutWide from "@layouts/WizardLayoutWide.astro";
 ---
 
 <!doctype html>
@@ -9,10 +10,7 @@ import PriceTable from "@components/price-table";
   <head>
     <WizardHead title="About" description="About" />
   </head>
-  <body>
-    <div class="page phb">
-      <PriceTable />
-      <PriceTiers />
-    </div>
-  </body>
+  <PageLayoutWide>
+    <PriceTiers />
+  </PageLayoutWide>>
 </html>

@@ -1,13 +1,12 @@
 ---
-import PageLayoutWide from "@layouts/WizardLayoutWide.astro";
+import WizardLayoutWide from "@layouts/WizardLayoutWide.astro";
 import Features from "@components/Features.astro";
-import WizardHero from "@components/wizard-hero";
+
 import WizardBaseHead from "@components/WizardBaseHead.astro";
 ---
 
-<PageLayoutWide>
+<WizardLayoutWide>
   <slot>
-    <WizardHero />
     <Features />
   </slot>
-</PageLayoutWide>
+</WizardLayoutWide>

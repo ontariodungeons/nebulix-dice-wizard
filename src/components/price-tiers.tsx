@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 
 export default function PriceTiers() {
   return (
-    <div className="bg-[#1a1a1a] text-white p-8 dark:bg-[#1a1a1a] dark:text-white">
+    <div className="bg-[#1a1a1a]p-8 dark:bg-[#1a1a1a] dark:text-white">
       <h1 className="text-4xl font-bold text-center mb-10">The Dice Wizard Welcomes You to Join the Adventure!</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card className="bg-[#f8f0e3] flex flex-col justify-between border border-gray-300 dark:border-gray-700">

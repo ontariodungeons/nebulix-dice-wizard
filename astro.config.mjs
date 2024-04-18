@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import { astroImageTools } from "astro-imagetools";
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import m2dx from "astro-m2dx";
@@ -14,8 +13,8 @@ const oembedTransformer = fauxOembedTransformer.default;
 import vue from "@astrojs/vue";
 /** @type {import('astro-m2dx').Options} */
 import db from "@astrojs/db";
-import playformCompress from "@playform/compress";
 import vercel from "@astrojs/vercel/serverless";
+import starlight from "@astrojs/starlight";
 const m2dxOptions = {
   exportComponents: true,
   unwrapImages: true,
@@ -25,10 +24,10 @@ const m2dxOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://nebulix.unfolding.io",
+  site: "https://dicewizardgames.com",
   integrations: [icon(), mdx({}), sitemap(), tailwind(), react(), vue({
     appEntrypoint: "/src/pages/_app"
-  }), astroImageTools, db(), playformCompress()],
+  }), db()],
   markdown: {
     extendDefaultPlugins: true,
     remarkPlugins: [[remarkEmbedder, {
@@ -53,7 +52,5 @@ export default defineConfig({
   scopedStyleStrategy: "attribute",
   prefetch: {
     defaultStrategy: "viewport"
-  },
-  output: "server",
-  adapter: vercel()
+  }
 });

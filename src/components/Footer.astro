@@ -65,27 +65,9 @@ const showNewsletter = !!import.meta.env.NEWSLETTER_PROVIDER;
         <div class="min-w-[12rem] space-y-3 sm:max-w-[14rem]">
           <div class="font-semibold uppercase">{t("social")}</div>
           <div class="flex flex-col">
-            {
-              contact.data.social && (
-                <ul class="-ml-1 flex  flex-wrap justify-center gap-2 sm:justify-start ">
-                  {contact.data.social.map((link) => (
-                    <li>
-                      <a
-                        href={link.href}
-                        class="grid h-full place-items-center transition-transform duration-500 hover:scale-110 "
-                        target="_blank"
-                        aria-label={link.label}
-                      >
-                        <Icon name={link.icon} class="h-8 w-8" />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )
-            }
+            <!-- Footer was here -->
           </div>
         </div>
-
       </div>
     </div>
   </div>

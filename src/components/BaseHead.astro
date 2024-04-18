@@ -1,7 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
-import { importImage } from "astro-imagetools/api";
+import { Image } from "astro:assets";
 import "../styles/wizard-main.less";
 
 const { data } = await getEntry("config", "about");
@@ -15,10 +15,10 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, thumbnail } = Astro.props;
 const searchImage = !!thumbnail
-  ? await importImage(`${thumbnail}?w=120&h=120&ar=1&position=entropy`)
+  ? await import(`${thumbnail}?w=120&h=120&ar=1&position=entropy&as=webp`)
   : null;
 const socialImage = !!thumbnail
-  ? await importImage(`${thumbnail}?w=1200&h=630&ar=1&position=entropy`)
+  ? await import(`${thumbnail}?w=1200&h=630&ar=1&position=entropy&as=webp`)
   : null;
 
 const pageTitle = `${title} | ${data.sitename}`;

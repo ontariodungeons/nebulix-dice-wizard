@@ -1,6 +1,7 @@
 ---
 /* BLOG ARCHIVE PAGES */
 import { getEntry } from "astro:content";
+import PageLayoutArchive from "@layouts/PageLayoutArchive.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
@@ -20,6 +21,11 @@ const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 /* get the used tags */
-const allFilters = posts.map((post) => post.data.tag).filter((post) => !!post);
+const allFilters = posts
+  .map((post) => post.data.tags)
+  .flat()
+  .filter((tag) => !!tag);
 const filters = [...new Set(allFilters.flat(1))];
 ---
+
+<PageLayoutArchive {page} {filters} {data} {base_url} />
